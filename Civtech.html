@@ -70,65 +70,34 @@
 
 <br>
 <p class="right">2026.09.27</p>
-<h1>ClassTime – Projektterv</h1>
 
-<h2>1. Csoporttagok, struktúra</h2>
+<h1>Projekt terv</h1>
 
 <p>
-    A fejlesztőcsapat négy tagból áll, akik a projekt teljes
-    életciklusa során együttműködve dolgoznak a rendszer
-    megtervezésén és megvalósításán:
+    <strong>A projekt témája:</strong> Egy Civilization alapú 2D stratégiai játék elméleti megalkotása és teljes belső szerkezetének kidolgozása.
+</p>
+
+<h2>1. Csoport tagjai, struktúrája</h2>
+
+<p>
+    A fejlesztőcsapat négy főből áll. Mivel a feladat egy átfogó rendszerterv elkészítése, a munkát funkcionálisan osztottuk fel egymás között:
 </p>
 
 <ul>
-    <li>
-        Aggod Ádám – Fejlesztés és adatbázis-tervezés felelős
-    </li>
+    <li><strong>Csobádi Bence:</strong> Dokumentáció összeállítása és a játékmechanikák elméleti tesztelése (balanszolás).</li>
+    <li><strong>Kálmán Gábor József:</strong> Backend és játéklogika tervezése.</li>
+    <li><strong>Várdai Balázs:</strong> UI/UX és frontend tervezés, a felhasználói felület összerakása.</li>
+    <li><strong>Braun Milán:</strong> Adatbázis-tervezés (mentési rendszerek, entitások).</li>
 </ul>
 
 <p>
-    A csoport szervezeti felépítése egyenrangú fejlesztői modell,
-    azonban a felelősségi körök funkcionális bontás szerint
-    kerültek meghatározásra.
+    A csapat struktúrája egyenrangú. A feladatokat közösen beszéljük meg, és heti 1-2 alkalommal egyeztetünk az előrehaladásról.
 </p>
 
-<p>
-    A projektvezetői döntéseket közösen hozzák meg, rendszeres
-    egyeztetésekkel (hetente 1–2 alkalommal).
-</p>
+<h2>2. Fejlesztési terv: mérföldkövek, eredmények</h2>
 
 <p>
-    A fejlesztési folyamat során agilis megközelítést alkalmaznak,
-    amely lehetővé teszi a rendszer iteratív fejlesztését és a
-    felmerülő igények gyors kezelését.
-</p>
-
-<h2>2. A projekt célja</h2>
-
-<p>
-    A ClassTime célja egy olyan webes órarend-kezelő rendszer
-    fejlesztése, amely megkönnyíti az egyetemi hallgatók és oktatók
-    számára az órarendek kezelését, ütközések elkerülését és a
-    tanulmányi időbeosztás tervezését.
-</p>
-
-<p>
-    A rendszer belső használatra készül, az egyetem informatikai
-    infrastruktúráján belül működik.
-</p>
-
-<p><strong>Fő funkciók:</strong></p>
-
-<ul>
-    <li>Hallgatók számára személyre szabott órarend megjelenítése</li>
-</ul>
-
-<h2>3. Fejlesztési terv, mérföldkövek és eredmények</h2>
-
-<p>
-    A projekt fejlesztési ideje körülbelül 5–6 hónap,
-    heti 10–15 munkaórás ráfordítással fejenként.
-    A fejlesztés fázisai a következők:
+    A projekt nagyjából 5-6 hónapot ölel fel, amit jól elkülöníthető fázisokra bontottunk:
 </p>
 
 <table>
@@ -141,46 +110,61 @@
     </thead>
     <tbody>
         <tr>
-            <td>Október 20 – November 10.</td>
-            <td>Követelmény-analízis és specifikáció</td>
-            <td>
-                A felhasználói igények összegyűjtése,
-                use case-ek meghatározása,
-                rendszerfunkciók leírása.
-            </td>
+            <td>Okt. 20 – Nov. 10.</td>
+            <td>Koncepció és követelmények</td>
+            <td>Alapmechanikák rögzítése, Use-case-ek összeírása.</td>
+        </tr>
+        <tr>
+            <td>Nov. 11 – Dec. 15.</td>
+            <td>Architektúra és adatmodell</td>
+            <td>Rendszerterv vázlata, UML diagramok, adatbázis (mentési) struktúra.</td>
+        </tr>
+        <tr>
+            <td>Január</td>
+            <td>Logika és algoritmusok</td>
+            <td>Körökre osztott logika, útvonalkeresés és nyersanyag-számítások megtervezése.</td>
+        </tr>
+        <tr>
+            <td>Február</td>
+            <td>UI/UX és Balanszolás</td>
+            <td>Felületek drótvázai (wireframe), Excel-alapú matematikai balanszolás.</td>
+        </tr>
+        <tr>
+            <td>Március</td>
+            <td>Véglegesítés</td>
+            <td>A teljes dokumentáció összeállítása, prezentációra való felkészülés.</td>
         </tr>
     </tbody>
 </table>
 
-<h2>4. Programozási nyelvek és fejlesztői eszközök</h2>
+<h2>3. Programozói nyelvek, fejlesztő eszközök</h2>
+
+<p>
+    Bár a projekt fókuszában az elméleti tervezés áll, a rendszert úgy alkotjuk meg, mintha a következő technológiákkal implementálnánk:
+</p>
 
 <ul>
-    <li>Frontend: HTML5, CSS3, JavaScript</li>
-    <li>Backend: Python (Flask)</li>
-    <li>Adatbázis: MySQL</li>
-    <li>Verziókezelés: Git (GitHub)</li>
-    <li>Fejlesztői környezet: Visual Studio Code</li>
-    <li>Modellezés: Draw.io, Lucidchart</li>
-    <li>Kommunikáció: Microsoft Teams, Google Drive</li>
+    <li><strong>Backend / Logika:</strong> C#</li>
+    <li><strong>Adatbázis:</strong> MySQL (a játékállapotok és mentések tárolására)</li>
+    <li><strong>Tervezett fejlesztőkörnyezet:</strong> Visual Studio / Visual Studio Code</li>
+    <li><strong>Adatbázis-tervező eszköz:</strong> MySQL Workbench</li>
 </ul>
 
-<h2>5. Használni tervezett eszközök és technikák</h2>
+<h2>4. Használni tervezett eszközök, technikák</h2>
 
-<p> A fejlesztés agilis módszertan szerint, a Scrum alapelveit követve zajlik.</p>
-
-<p> Kéthetes sprintekben történik a fejlesztés, minden sprint végén részletes értékeléssel.</p>
-
-<p><strong>Alkalmazott technikák:</strong></p>
+<p>
+    A munkát kéthetes szakaszokrabontjuk, hogy folyamatosan tudjunk haladni a tervezéssel.
+</p>
 
 <ul>
-    <li>Sprint alapú fejlesztés</li>
-    <li>Use case-alapú elemzés</li>
-    <li>UML modellezés</li>
-    <li>Tesztvezérelt gondolkodás (TDD)</li>
-    <li>Verziókezelés GitHub segítségével</li>
+    <li><strong>Modellezés és UML:</strong> Draw.io, Lucidchart (osztály- és állapotdiagramokhoz).</li>
+    <li><strong>UI/UX elemek:</strong> Figma vagy egyszerű HTML/CSS mockupok.</li>
+    <li><strong>Verziókezelés:</strong> Git és GitHub (a dokumentáció közös szerkesztéséhez).</li>
+    <li><strong>Balanszolás és számítások:</strong> Microsoft Excel (a nyersanyagok és egység-statisztikák szimulálására).</li>
+    <li><strong>Kommunikáció és feladatkezelés:</strong> Discord, Microsoft Teams.</li>
 </ul>
 
-<h2>6. Leendő produktumok és létrejöttük ideje</h2>
+<h2>5. Leendő produktumok (dokumentum), és létrejöttük ideje.</h2>
 
 <table>
     <thead>
@@ -192,113 +176,65 @@
     </thead>
     <tbody>
         <tr>
-            <td>Prototípus felület</td>
-            <td>
-                Egyszerű, kattintható webes prototípus
-                a fő funkciókkal.
-            </td>
+            <td>Game Design Document v0.1</td>
+            <td>A játék alapvető szabályai és mechanikái leírva.</td>
             <td>November vége</td>
         </tr>
         <tr>
             <td>Adatbázis-modell</td>
-            <td>
-                A rendszer relációs adatmodellje,
-                kapcsolatdiagramokkal.
-            </td>
+            <td>A játék mentéséhez szükséges relációs modell ábrája.</td>
             <td>December eleje</td>
         </tr>
         <tr>
-            <td>Backend API</td>
-            <td>
-                A Flask alapú kiszolgálóprogram,
-                CRUD funkciókkal.
-            </td>
+            <td>Backend UML tervek</td>
+            <td>Az alapvető körökre osztott rendszer diagramjai.</td>
             <td>Január közepe</td>
         </tr>
         <tr>
-            <td>Ütközésellenőrző modul</td>
-            <td>
-                Az órák és kurzusok időbeli ütközéseit
-                elemző funkció.
-            </td>
+            <td>UI Wireframe-ek</td>
+            <td>A játékos interfészének (menük, tech tree) vizuális tervei.</td>
             <td>Február eleje</td>
         </tr>
         <tr>
-            <td>
-                Teljes ClassTime rendszer (belső verzió)
-            </td>
-            <td>
-                Stabil, működő rendszer az egyetemi teszteléshez.
-            </td>
+            <td>Végleges Rendszerterv</td>
+            <td>A komplett dokumentáció, ami összefogja a terveket.</td>
             <td>Március vége</td>
         </tr>
     </tbody>
 </table>
 
-<h2>7. Tesztelési követelmények</h2>
+<h2>6. Tesztelési követelmények</h2>
 
-<p>A fejlesztés végén célzott tesztelési fázis zajlik, amely az alábbi területeket fedi le:</p>
-
-<ul>
-    <li>
-        <strong>Funkcionális tesztek:</strong>
-        minden use case ellenőrzése
-        (pl. kurzusfelvétel, ütközésjelzés).
-    </li>
-    <li>
-        <strong>Integrációs tesztek:</strong>
-        az egyes modulok (pl. adatbázis – backend – UI)
-        együttműködésének validálása.
-    </li>
-    <li>
-        <strong>Teljesítményteszt:</strong>
-        nagyobb adatállomány mellett is stabil működés biztosítása.
-    </li>
-    <li>
-        <strong>Felhasználói teszt:</strong>
-        valós hallgatói és oktatói visszajelzések alapján finomítás.
-    </li>
-    <li>
-        <strong>Biztonsági teszt:</strong>
-        bejelentkezési és jogosultságkezelési funkciók ellenőrzése.
-    </li>
-</ul>
-
-<p>A hibajegyek és visszajelzések GitHub-issue-k formájában kerülnek rögzítésre és követésre.</p>
-
-<h2>8. Bemutatás és szállítás módja, ideje</h2>
-
-<p>A ClassTime rendszer belső, egyetemi célra készül.</p>
-
-<p><strong>A szállítás a következő módon történik:</strong></p>
-
-<ul>
-    <li>Tesztverzió telepítése az egyetem szerverére</li>
-    <li>Felhasználói útmutató és rövid oktatás</li>
-    <li>Záró bemutató az informatikai osztály számára</li>
-</ul>
-
-<p><strong>Végső szállítás:</strong> 2026. március 31.</p>
-
-<h2>9. Információforrások</h2>
-<ul>
-    <li>Flask dokumentáció</li>
-    <li>MySQL dokumentáció</li>
-    <li>RUP és agilis fejlesztési leírások</li>
-    <li>UML szabványok</li>
-    <li>Saját egyetemi rendszerek mintái</li>
-    <li>Online források (Stack Overflow, GitHub)</li>
-</ul>
-
-<h2>Összegzés</h2>
 <p>
-    A ClassTime projekt célja egy stabil, belső használatú,
-    webes órarend-kezelő rendszer létrehozása.
+    Mivel a leadandó egy elméleti rendszerterv, a tesztelés nálunk a kigondolt mechanikák és a logika validálását jelenti:
 </p>
+
+<ul>
+    <li><strong>Logikai validáció:</strong> Az UML diagramok és folyamatok asztali ellenőrzése, hogy nincsenek-e holtpontok a tervezett játékmenetben.</li>
+    <li><strong>Matematikai balanszolás:</strong> A nyersanyagtermelés és az egységek statisztikáinak Excelben történő szimulálása, elkerülve a kiegyensúlyozatlan játékélményt.</li>
+    <li><strong>UI/UX tesztelés:</strong> A felületek véleményeztetése külsős hallgatókkal (mennyire egyértelmű az irányítás és az elrendezés).</li>
+</ul>
+
+<h2>7. Bemutatás (demó) és szállítás módja, ideje</h2>
+
 <p>
-    A fejlesztés a RUP és Scrum elvek kombinációjára épül,
-    agilis, iteratív fejlesztéssel és folyamatos minőségellenőrzéssel.
+    A projekt végső célja a komplett Rendszerterv (GDD és szoftverterv egyben).
 </p>
+
+<ul>
+    <li><strong>Bemutatás:</strong> Egy rövid trailer kiadása a cég közösségi médiájában amint a végső tesztfázis megkezdődik.</li>
+    <li><strong>Szállítás módja:</strong> Digitális üzletekben történő közzététel (pl. Steam).</li>
+    <li><strong>Végső határidő:</strong> 2027. március vége.</li>
+</ul>
+
+<h2>8. Információ források</h2>
+
+<ul>
+    <li>Szoftvertervezési szakirodalom (UML szabványok, szoftverfejlesztési módszertanok).</li>
+    <li>A Civilization széria wiki oldalai (a mechanikák és a "tech tree" dekonstrukciójához, elemzéséhez).</li>
+    <li>Game design blogok és cikkek 2D stratégiák építéséről.</li>
+    <li>MySQL és C# dokumentációk a technikai megvalósíthatóság és a mentési rendszer tervezéséhez.</li>
+</ul>
 
 </body>
 </html>
