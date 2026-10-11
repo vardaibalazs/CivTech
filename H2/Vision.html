@@ -2,8 +2,31 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <style>
-    p { margin-bottom: 0; }
+        <style>
+    
+    @page {
+        size: A4 portrait;
+        margin: 2.5cm;
+    }
+    
+    
+    html {
+        background-color: #e0e0e0;
+    }
+    
+
+    body {
+        max-width: 21cm; 
+        margin: 2cm auto; 
+        padding: 2.5cm; 
+        background-color: white;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+    }
+    
+    
+    p { margin-bottom: 0; margin-top: 0.5em; line-height: 1.5; }
     .left { text-align: left; }
     .center { text-align: center; }
     .right { text-align: right; }
@@ -11,17 +34,28 @@
     .title { font-size: 26pt; }
     .members { font-size: 16pt; }
     .spacer { height: 1.5cm; }
+    
+   
     table {
-        width: 90%;
-        border: 1px solid black;
-        border-spacing: 3px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
-
-    td {
+    th, td {
         border: 1px solid black;
-        padding: 4px;
+        padding: 8px;
         vertical-align: top;
+        text-align: left;
     }
+    th {
+        background-color: #f9f9f9;
+    }
+    
+    h3 { margin-top: 1.5em; }
+    h4 { margin-top: 1.2em; }
+    ul { margin-top: 0.5em; margin-bottom: 0.5em; }
+    li { margin-bottom: 0.3em; line-height: 1.4; }
     </style>
 </head>
 
@@ -91,17 +125,151 @@ A különböző győzelmi feltételekhez különböző technológiák kifejleszt
 
 <h2>2.3 Az elkészült termék helye</h2>
 
-<h1>3. Felhazsnálók</h1>
+<h3>3. Érintettek és felhasználók</h3>
+<p>Ebben a fejezetben azokat a személyeket és csoportokat azonosítjuk, akik részt vesznek a Foundation, stratégia játék fejlesztésében, valamint a leendő felhasználókat.</p>
 
-<h2>3.1. Az érintettek összefoglalása</h2>
+<h3>3.1 Az érintettek összefoglalása</h3>
+<table>
+  <tr>
+    <th>Elnevezés</th>
+    <th>Leírás</th>
+    <th>Szerep</th>
+  </tr>
+  <tr>
+    <td><b>Fejlesztőcsapat</b></td>
+    <td>A Foundation, stratégia játék szoftverének megalkotói.</td>
+    <td>A rendszer teljes logikájának, grafikus felületének és adatbázisának megtervezői valamint programozói.</td>
+  </tr>
+  <tr>
+    <td><b>Projektvezető / Gyakorlatvezető</b></td>
+    <td>A projekt vezetője ő felel a követelmények betartatásáért valamint a dokumentációk felügyeletéért.</td>
+    <td>Meghatározza a fejlesztéssel kapcsolatos követelményeket és értékeli, jóváhagyja az elkészült játékot és dokumentációt.</td>
+  </tr>
+  <tr>
+    <td><b>Jövőbeli játékosok</b></td>
+    <td>Azok a magánszemélyek akik szórakozási céllal használják majd a szoftvert.</td>
+    <td>Ők a célközönség, a szoftver az ő igényeit (stabil optimalizált futás, szórakoztató játékélmény, kezelhetőség) hivatott kielégíteni.</td>
+  </tr>
+</table>
 
-<h2>3.2. A felhasználók összefoglalása</h2>
+<h3>3.2 A felhasználók összefoglalása</h3>
+<table>
+  <tr>
+    <th>Elnevezés</th>
+    <th>Leírás</th>
+    <th>Illetékes</th>
+  </tr>
+  <tr>
+    <td><b>Játékos</b></td>
+    <td>Szórakoztatás céljából játsza a játékot, számára az átláthatóság, az izgalmas játékélmény, valamint offline játék esetén a mentés-betöltés megbízhatósága a legfontosabb.</td>
+    <td>A tesztelésért felelős csapattag reprezentálja a fejlesztési folyamatok során.</td>
+  </tr>
+  <tr>
+    <td><b>Fejlesztő / Adminisztrátor</b></td>
+    <td>Fejlesztési és karbantartási céllal hozzáfér a háttéradatokhoz, módosíthatja a játék paramétereket, valamint az adatbázis fájljait.</td>
+    <td>A backend és adatbázis fejlesztéséért felelős csapattagok.</td>
+  </tr>
+</table>
 
-<h2>3.3 Felhasználói környezet</h2>
+<h3>3.3 Felhasználói környezet</h3>
+<p>A játék használati körülményeit és a célközönség szokásait az alábbiak szerint határoztuk meg:</p>
+<ul>
+    <li><b>Támogatott platformok és jövőbeli tervek:</b> A végleges játék asztali számítógépeken és laptopokon fog futni, elsődlegesen Windows operációs rendszerre optimalizálva. A későbbiekben, amennyiben a játék piaci sikere és fogadtatása indokolja, tervezzük a szoftver konzolos platformokra (pl. Xbox, PlayStation) történő integrálását is.</li>
+    <li><b>Egyidejű felhasználók és maximális terhelés:</b> Egy időben, egy eszközön pontosan egy felhasználó fogja futtatni. Globális szinten az elvárásaink szerint 500-1000 példány értékesítésével számolunk.</li>
+    <li><b>Felhasználószámmal kapcsolatos trendek:</b> A marketingkampányunk hatására a megjelenés utáni első napokban várható a maximális egyidejű felhasználószám. Az előzetes tapasztalatok és a játékosközösség időbeosztása alapján a játék aktív használata munkanapokon jellemzően a délutáni és esti órákban fog koncentrálódni. Hétvégéken a szabadidő növekedésével arányosan a játékosok számának jelentős, kiugró emelkedésével számolunk. Későbbiekben esetleges frissítéseket, tematikus eventeket is ezekhez mérten tervezzük kiadni majd.</li>
+    <li><b>Használat időtartama és intenzitása:</b> A műfaj sajátosságaiból fakadóan egy-egy mérkőzés kifejezetten hosszúra nyúlhat. A felhasználók jellemzően 1-3 órán keresztül folyamatosan fogják használni a rendszert egyetlen alkalommal. Ez a megszakítás nélküli, intenzív használat megköveteli a játék alapos optimalizálását és a kiemelkedő stabilitást.</li>
+    <li><b>Különleges körülmények és hardverigény:</b> A játék használatához stabil  hálozati kapcsolat szükséges, egyéb különleges hardverigénye nincsen. Az irányítás nem igényel semmilyen egyedi vagy speciális hardvereszközt; a grafikus felületet hagyományos egér és billentyűzet használatára terveztük és optimalizáltuk. A hosszú játékmenetek miatt elengedhetetlen egy stabil, megbízható mentési rendszer tervezése és implementálása, ami biztosítja a játékállapot bármikori tárolását és visszatöltését.</li>
+    <li><b>Külső integrációk és hálózati kapcsolat:</b> Mivel a játék egy online, böngészőből elérhető webes alkalmazás lesz, így folyamatos hálózati kapcsolatra van szükség. A grafikus felület és a szerver közötti kommunikációt saját fejlesztésű webes API-k biztosítják, a játékállapotok és a mentések tárolása pedig egy távoli adatbázis-szerveren történik.</li>
+</ul>
 
-<h2>3.4. Illetékesek adatai</h2>
+<h3>3.4 Illetékesek adatai</h3>
+<table>
+  <tr>
+    <th>Név</th>
+    <th>Szerep</th>
+    <th>Felelősség</th>
+    <th>Elérhetőség</th>
+  </tr>
+  <tr>
+    <td><b>Csobádi Bence</b></td>
+    <td>Dokumentációs felelős és tesztelő</td>
+    <td>Dokumentáció összeállítása és a játékmechanikák tesztelése, balance-olása.</td>
+    <td>csobadibence@gmail.com</td>
+  </tr>
+  <tr>
+    <td><b>Kálmán Gábor József</b></td>
+    <td>Backend fejlesztő</td>
+    <td>Backend és játéklogika tervezése.</td>
+    <td>gaborkalman6@gmail.com</td>
+  </tr>
+  <tr>
+    <td><b>Várdai Balázs</b></td>
+    <td>UI/UX és Frontend tervező</td>
+    <td>UI/UX és frontend tervezés, a felhasználói felület elkészítése.</td>
+    <td>vardai.balazs22@gmail.com</td>
+  </tr>
+  <tr>
+    <td><b>Braun Milán</b></td>
+    <td>Adatbázis tervező</td>
+    <td>Adatbázis-tervezés (mentési/visszatöltési rendszerek, entitások).</td>
+    <td>braun2006milan@gmail.com</td>
+  </tr>
+  <tr>
+    <td><b>Dr. Mileff Péter</b></td>
+    <td>Projektvezető / Gyakorlatvezető</td>
+    <td>A projekt fejlesztésének felügyelete, szoftver, valamint a dokumentációk értékelése.</td>
+    <td>peter.mileff@uni-miskolc.hu</td>
+  </tr>
+</table>
 
-<h2>3.5. Felhasználók adatai</h2>
+<h3>3.5 Felhasználók adatai</h3>
+<h4>3.5.1 Elsődleges felhasználói csoportok:</h4>
+<p><b>3.5.1.1 Alkalmi és Stratégiai Játékosok:</b></p>
+<ul>
+  <li><b>Körülbelüli szám:</b> A célközönség széles, a kiadás után akár több száz/ezer játékos is lehet.</li>
+  <li><b>Használati minta:</b> Heti 1-2 alkalommal, de alkalmanként hosszú, 1-3 órás folyamatos offline játékmenetek.</li>
+  <li><b>Fő igények:</b> Könnyen tanulható grafikus felület, izgalmas kihívást játékélmény és megbízható mentés/betöltés funkció.</li>
+  <li><b>Reprezentáns:</b> Csobádi Bence (a fejlesztés során ő teszteli a játékmechanikát a játékosok szemszögéből).</li>
+</ul>
+
+<p><b>3.5.1.2 Rendszeradminisztrátorok / Fejlesztők:</b></p>
+<ul>
+  <li><b>Létszám:</b> 4 fő (a fejlesztőcsapat tagjai).</li>
+  <li><b>Használati minta:</b> A fejlesztési és tesztelési időszakban napi szintű, intenzív használat, a háttéradatok folyamatos módosításával.</li>
+  <li><b>Fő igények:</b> A játék belső logikájának balance-olása és fejlesztése, a mentési fájlok közvetlen elérése és módosítása tesztelési célból.</li>
+  <li><b>Reprezentáns:</b> Braun Milán (adatbázis) és Kálmán Gábor József (backend).</li>
+</ul>
+
+<h4>3.5.2 Felhasználói profilok és hozzáférési szintek</h4>
+<table>
+  <tr>
+    <th>Felhasználó típus</th>
+    <th>Jogosultsági szint</th>
+    <th>Fő funkciók</th>
+    <th>Reprezentáns</th>
+  </tr>
+  <tr>
+    <td><b>Játékos</b></td>
+    <td>Alap szint / Kliens szint</td>
+    <td>Játék indítása, mentés/betöltés, egységek irányítása a grafikus felületen keresztül.</td>
+    <td>Csobádi Bence</td>
+  </tr>
+  <tr>
+    <td><b>Fejlesztő / Admin</b></td>
+    <td>Teljes hozzáférés</td>
+    <td>Játékparaméterek módosítása, tesztelési funkciók, háttéradatbázis és logika elérése.</td>
+    <td>Braun Milán, Kálmán Gábor József</td>
+  </tr>
+</table>
+
+<h4>3.5.3 Kapcsolattartási protokoll a tesztelés során</h4>
+<ul>
+  <li><b>Visszajelzés gyűjtése:</b> A tesztelési fázisokban folyamatos játékmenet-tesztelés alapján történik a hibák/bugok és balance-olási problémák rögzítése.</li>
+  <li><b>Döntéshozatal:</b> Fontos változtatások (pl. egy egység túl erős) egyeztetése közös csapatmegbeszéléseken/konzultációkon történik.</li>
+  <li><b>Tesztelési folyamat:</b> Csobádi Bence teszteli a játékélményt, Kálmán Gábor József és Braun Milán pedig a háttérlogikát és a mentéseket.</li>
+  <li><b>Kommunikációs csatornák:</b> Discord/Személyes konzultáció (csapatmegbeszélésekhez) és verziókövető rendszer (hibajegyek kezeléséhez).</li>
+</ul>
+
 
 <h1>4. Végtermék</h1>
 
