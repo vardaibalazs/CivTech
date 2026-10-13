@@ -8,13 +8,9 @@
         size: A4 portrait;
         margin: 2.5cm;
     }
-    
-    
     html {
         background-color: #e0e0e0;
     }
-    
-
     body {
         max-width: 21cm; 
         margin: 2cm auto; 
@@ -24,8 +20,6 @@
         font-family: Arial, sans-serif;
         box-sizing: border-box;
     }
-    
-    
     p { margin-bottom: 0; margin-top: 0.5em; line-height: 1.5; }
     .left { text-align: left; }
     .center { text-align: center; }
@@ -34,8 +28,7 @@
     .title { font-size: 26pt; }
     .members { font-size: 16pt; }
     .spacer { height: 1.5cm; }
-    
-   
+
     table {
         width: 100%;
         border-collapse: collapse;
@@ -105,30 +98,113 @@
 <br>
 <p class="right">2026.10.07</p>
 
-<h1>1. Bevezetés</h1>
+<h2>Tartalomjegyzék</h2>
+
+<p><a href="#bevezetes">1. Bevezetés</a></p>
+<p><a href="#alkalmazas-helye">2. Az alkalmazás helye</a></p>
+<p><a href="#uzleti-lehetosegek">2.1 Üzleti lehetőségek</a></p>
+<p><a href="#problema-megfogalmazasa">2.2 A probléma megfogalmazása</a></p>
+<p><a href="#elkeszult-termek-helye">2.3 Az elkészült termék helye</a></p>
+<p><a href="#erintettek-felhasznalok">3. Érintettek és felhasználók</a></p>
+<p><a href="#erintettek-osszefoglalasa">3.1. Az érintettek összefoglalása</a></p>
+<p><a href="#felhasznalok-osszefoglalasa">3.2. A felhasználók összefoglalása</a></p>
+<p><a href="#felhasznaloi-kornyezet">3.3 Felhasználói környezet</a></p>
+<p><a href="#illetekesek-adatai">3.4. Illetékesek adatai</a></p>
+<p><a href="#felhasznalok-adatai">3.5. Felhasználók adatai</a></p>
+<p><a href="#vegtermek">4. A végtermék áttekintése</a></p>
+<p><a href="#termek-kapcsolatai">4.1 A termék kapcsolatai</a></p>
+<p><a href="#hasznalat-elonyei">4.2. A termék használatának előnyei</a></p>
+<p><a href="#feltetelezesek-fuggosegek">4.3. Feltételezések és függőségek</a></p>
+<p><a href="#koltsegbecsles">4.4 Költségbecslés</a></p>
+<p><a href="#installacio">4.5. Installáció</a></p>
+<p><a href="#vegtermek-jellemzoi">5. A végtermék jellemzői, biztosított szolgáltatások</a></p>
+<p><a href="#korlatozasok">6. Korlátozások</a></p>
+<p><a href="#minosegi-elvarasok">7. Minőségi elvárások</a></p>
+<p><a href="#dokumentacios-kovetelmenyek">8. Dokumentációkkal kapcsolatos követelmények</a></p>
+<p><a href="#kockazatlista">9. Kockázat lista</a></p>
+<p><a href="#szotar">10. Szótár</a></p>
+
+<h1 id="bevezetes">1. Bevezetés</h1>
 
 <p>
-A Foundation egy 2D felülnézetes stratégia játék ahol a cél hogy a többi játékos legyőzésével megnyerjük a játékot.
-A játékot ihklette a Civilization játék széria, de bőven különbözik mert egy ingyen és böngészőben játszahtó bárki által elérhető játék a cél.
+A Foundation egy 2D-s, felülnézetes stratégiai játék, amelynek célja, hogy a játékosok stratégiai döntéseik és erőforrásaik megfelelő felhasználásával
+ megszerezzék a győzelmet. A játékot a Civilization játéksorozat inspirálta, azonban a projekt fő célkitűzése egy ingyenesen elérhető, böngészőben futtatható játék létrehozása, 
+ amelyet a felhasználók egyszerűen, külön telepítés nélkül kipróbálhatnak.
 </p>
+
 <p>
-A játékban a győzelem megszerzéséhez 3 kategória alapján lehet nyerni, a többi játékos katonia leigázásával, technológia fejlődéssel és egy új bojgóra továbblépni és gazdasági dominanciával kiszorítani a többi játékost.
-A különböző győzelmi feltételekhez különböző technológiák kifejlesztése szükséges és a pályán lévő különböző nyersanyagok megszerzése is kell.
+A játékmenet körökre osztott, így a játékosok minden körben megtervezhetik és végrehajthatják a következő lépéseiket. 
+A különböző játékmódok lehetőséget biztosítanak eltérő szabályok és időkorlátok alkalmazására.
+ Az időkorlátos játékmódokban különösen fontos a gyors helyzetfelismerés, a hatékony erőforrás-gazdálkodás és a megfelelő stratégia megválasztása.
 </p>
 
+<p>
+A győzelem három különböző módon érhető el. A játékos katonai fölény kialakításával legyőzheti ellenfeleit, 
+technológiai fejlődéssel elérheti a bolygó elhagyásához szükséges fejlettségi szintet, vagy gazdasági dominanciát szerezhet, amellyel kiszotíthattja a többi játékosot.
+Az egyes győzelmi feltételek teljesítéséhez különböző technológiák kifejlesztése és a játékban lévő nyersanyagok megszerzésére van szükség.
+</p>
 
-<h1>2. Alkalmazás helye</h1>
+<p>
+A projekt célja egy olyan stratégiai játék megvalósítása, amely változatos döntési lehetőségeket kínál, és többféle győzelmi útvonalon keresztül biztosítja a játékélményt. 
+A böngészőalapú működésnek köszönhetően a játék könnyen hozzáférhető, miközben lehetőséget teremt a stratégiai gondolkodás és a hosszú távú tervezés gyakorlására.
+</p>
 
-<h2>2.1 Üzleti lehetőségek</h2>
+<h1 id="alkalmazas-helye">2. Alkalmazás helye</h1>
 
-<h2>2.2 A probléma megfogalmazása</h2>
+<h2 id="uzleti-lehetosegek">2.1 Üzleti lehetőségek</h2>
 
-<h2>2.3 Az elkészült termék helye</h2>
+<p>
+  A Foundation elsődleges célja egy ingyenesen elérhető, böngészőben futtatható stratégiai játék létrehozása. Az alkalmazás olyan felhasználókat céloz meg, 
+  akik kedvelik a körökre osztott stratégiai játékokat, de nem feltétlenül szeretnének külön programot telepíteni, illetve fizetős játékot vásárolni a hasonló játékélmény eléréséhez.
+</p>
 
-<h3>3. Érintettek és felhasználók</h3>
+<p>
+A böngészőalapú megoldás csökkenti a játék kipróbálásának akadályait, mivel a felhasználóknak elegendő egy megfelelő böngészővel rendelkező eszköz. 
+Ez lehetőséget teremt a felhasználói kör bővítésére és a játék egyszerű terjesztésére. A többféle győzelmi feltétel és játékmód hozzájárulhat ahhoz, hogy a játék hosszabb távon is érdekes maradjon.
+</p>
+
+<p>
+A projekt későbbi fejlesztése során lehetőség nyílhat új játékmódok, további technológiák, egységek és pályatípusok bevezetésére. Amennyiben a játék felhasználói bázisa és a rendelkezésre álló fejlesztési erőforrások ezt indokolják, 
+a későbbiekben közösségi funkciók vagy egyéb kiegészítő szolgáltatások is megvalósíthatók. Ezek a lehetőségek azonban nem feltétlenül részei az alkalmazás kezdeti változatának.  
+</p>
+
+<h2 id="problema-megfogalmazasa">2.2 A probléma megfogalmazása</h2>
+
+<p>
+  A stratégiai játékok egy része telepítést, jelentősebb hardveres erőforrásokat vagy fizetős hozzáférést igényelhet. Ez megnehezítheti a játék kipróbálását azok számára, akik egyszerűen, gyorsan és különösebb előkészületek nélkül szeretnének stratégiai játékkal játszani.
+</p>
+
+<p>
+  További kihívást jelent egy olyan játékrendszer kialakítása, amelyben a játékosok többféle stratégiát követhetnek, és nem kizárólag egyetlen módszerrel érhetik el a győzelmet. A katonai, technológiai és gazdasági fejlődés megfelelő egyensúlyának megteremtése szükséges ahhoz, hogy a különböző játékstílusok életképesek legyenek.
+</p>
+
+<p>
+  A Foundation ezekre a problémákra egy böngészőből elérhető, körökre osztott stratégiai játék formájában kínál megoldást. A játék központi elemei a stratégiai döntéshozatal, az erőforrások kezelése, a technológiai fejlődés és az ellenfelekkel folytatott versengés. 
+  A különböző győzelmi feltételek lehetővé teszik, hogy a játékosok a kialakult helyzethez igazítsák stratégiájukat, és többféle úton próbálják megnyerni a játékot.
+</p>
+
+<h2 id="elkeszult-termek-helye">2.3 Az elkészült termék helye</h2>
+
+<p>
+  A Foundation egy böngészőben futtatható, 2D-s, felülnézetes, körökre osztott stratégiai játék. A termék a számítógépes stratégiai játékok kategóriájába tartozik, és a Civilization játéksorozathoz hasonlóan a tervezésre, az erőforrások felhasználására, a technológiai fejlődésre és az ellenfelekkel való versengésre épül.
+</p>
+
+<p>
+  Az alkalmazás sajátossága, hogy a játék elindításához nem szükséges hagyományos telepítési folyamat, mivel a felhasználók webböngészőn keresztül érhetik el. Ez egyszerűbb hozzáférést biztosíthat, és lehetővé teszi, hogy a játék a megfelelő böngészővel rendelkező eszközökön használható legyen.
+</p>
+
+<p>
+  A termék működésének középpontjában a körök kezelése, a játékosok döntéseinek feldolgozása, a nyersanyagok megszerzése és felhasználása, a technológiai fejlesztések, valamint a győzelmi feltételek ellenőrzése áll. A játékosok katonai, technológiai vagy gazdasági stratégiát követve próbálhatnak előnyre szert tenni.
+</p>
+
+<p>
+  A Foundation egy önálló játékprojekt, amely a könnyű hozzáférhetőség és a változatos stratégiai lehetőségek ötvözésével kíván alternatívát nyújtani a hagyományos, telepítést igénylő stratégiai játékok mellett.
+</p>
+
+<h3 id="erintettek-felhasznalok">3. Érintettek és felhasználók</h3>
 <p>Ebben a fejezetben azokat a személyeket és csoportokat azonosítjuk, akik részt vesznek a Foundation, stratégia játék fejlesztésében, valamint a leendő felhasználókat.</p>
 
-<h3>3.1 Az érintettek összefoglalása</h3>
+<h3 id="erintettek-osszefoglalasa">3.1 Az érintettek összefoglalása</h3>
 <table>
   <tr>
     <th>Elnevezés</th>
@@ -152,7 +228,7 @@ A különböző győzelmi feltételekhez különböző technológiák kifejleszt
   </tr>
 </table>
 
-<h3>3.2 A felhasználók összefoglalása</h3>
+<h3 id="felhasznalok-osszefoglalasa">3.2 A felhasználók összefoglalása</h3>
 <table>
   <tr>
     <th>Elnevezés</th>
@@ -171,7 +247,7 @@ A különböző győzelmi feltételekhez különböző technológiák kifejleszt
   </tr>
 </table>
 
-<h3>3.3 Felhasználói környezet</h3>
+<h3 id="felhasznaloi-kornyezet">3.3 Felhasználói környezet</h3>
 <p>A játék használati körülményeit és a célközönség szokásait az alábbiak szerint határoztuk meg:</p>
 <ul>
     <li><b>Támogatott platformok és jövőbeli tervek:</b> A végleges játék asztali számítógépeken és laptopokon fog futni, elsődlegesen Windows operációs rendszerre optimalizálva. A későbbiekben, amennyiben a játék piaci sikere és fogadtatása indokolja, tervezzük a szoftver konzolos platformokra (pl. Xbox, PlayStation) történő integrálását is.</li>
@@ -182,7 +258,7 @@ A különböző győzelmi feltételekhez különböző technológiák kifejleszt
     <li><b>Külső integrációk és hálózati kapcsolat:</b> Mivel a játék egy online, böngészőből elérhető webes alkalmazás lesz, így folyamatos hálózati kapcsolatra van szükség. A grafikus felület és a szerver közötti kommunikációt saját fejlesztésű webes API-k biztosítják, a játékállapotok és a mentések tárolása pedig egy távoli adatbázis-szerveren történik.</li>
 </ul>
 
-<h3>3.4 Illetékesek adatai</h3>
+<h3 id="illetekesek-adatai">3.4 Illetékesek adatai</h3>
 <table>
   <tr>
     <th>Név</th>
@@ -222,7 +298,7 @@ A különböző győzelmi feltételekhez különböző technológiák kifejleszt
   </tr>
 </table>
 
-<h3>3.5 Felhasználók adatai</h3>
+<h3 id="felhasznalok-adatai">3.5 Felhasználók adatai</h3>
 <h4>3.5.1 Elsődleges felhasználói csoportok:</h4>
 <p><b>3.5.1.1 Alkalmi és Stratégiai Játékosok:</b></p>
 <ul>
@@ -271,29 +347,29 @@ A különböző győzelmi feltételekhez különböző technológiák kifejleszt
 </ul>
 
 
-<h1>4. Végtermék</h1>
+<h1 id="vegtermek">4. Végtermék</h1>
 
-<h2>4.1 A termék kapcsolatai</h2>
+<h2 id="termek-kapcsolatai">4.1 A termék kapcsolatai</h2>
 
-<h2>4.2. A termék használatának előnyei</h2>
+<h2 id="hasznalat-elonyei">4.2. A termék használatának előnyei</h2>
 
-<h2>4.3. Feltételezések és függőségek</h2>
+<h2 id="feltetelezesek-fuggosegek">4.3. Feltételezések és függőségek</h2>
 
-<h2>4.4 Költségbecslés</h2>
+<h2 id="koltsegbecsles">4.4 Költségbecslés</h2>
 
-<h2>4.5. Installáció</h2>
+<h2 id="installacio">4.5. Installáció</h2>
 
-<h1>5. A végtermék jellemzői, biztosított szolgáltatások</h1>
+<h1 id="vegtermek-jellemzoi">5. A végtermék jellemzői, biztosított szolgáltatások</h1>
 
-<h1>6. Korlátozások</h1>
+<h1 id="korlatozasok">6. Korlátozások</h1>
 
-<h1>7. Minőségi elvárások</h1>
+<h1 id="minosegi-elvarasok">7. Minőségi elvárások</h1>
 
-<h1>8. Dokumentációkkal kapcsolatos követelmények</h1>
+<h1 id="dokumentacios-kovetelmenyek">8. Dokumentációkkal kapcsolatos követelmények</h1>
 
-<h1>9. Kockázat lista</h1>
+<h1 id="kockazatlista">9. Kockázat lista</h1>
 
-<h1>10. Szótár</h1>
+<h1 id="szotar">10. Szótár</h1>
 
 </body>
 </html>
