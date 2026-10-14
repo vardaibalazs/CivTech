@@ -364,12 +364,157 @@ a későbbiekben közösségi funkciók vagy egyéb kiegészítő szolgáltatás
 <h1 id="korlatozasok">6. Korlátozások</h1>
 
 <h1 id="minosegi-elvarasok">7. Minőségi elvárások</h1>
+<ul>
+  <li>
+    A Civilization-alapú stratégiai játéknak átlátható, megbízható és könnyen kezelhető működést kell biztosítania a játékosok számára. A felhasználói felületnek egyértelműen kell megjelenítenie a játék állapotát, a városok adatait, a rendelkezésre álló nyersanyagokat és az egységek tulajdonságait. A játékszabályoknak következetesen kell működniük, és a rendszernek kezelnie kell az érvénytelen műveleteket, például a szükséges nyersanyagok hiányában történő fejlesztést.
+  </li>
+  <li>
+    A megbízhatóság érdekében a játékállapot mentésének és betöltésének megfelelően kell működnie, biztosítva a játék későbbi folytathatóságát. Az adatbázisban tárolt adatoknak összhangban kell állniuk a játék aktuális állapotával, az adatkezelés során pedig el kell kerülni az adatok sérülését és elvesztését. A rendszer felépítésének lehetővé kell tennie a későbbi bővítést, például új egységek, épületek és technológiai fejlesztések hozzáadását.
+  </li>
+  <li>
+    A teljesítmény szempontjából fontos, hogy a játékos műveleteire a rendszer gyorsan reagáljon, a körváltás, a játékállapot mentése és betöltése pedig elfogadható időn belül történjen meg. A játék működését úgy kell megtervezni, hogy nagyobb térkép és több egység esetén is megfelelően kezelje a szükséges számításokat. A játékegyensúly kialakításakor ügyelni kell arra, hogy a különböző stratégiák életképesek maradjanak, és egyik játékelem se biztosítson indokolatlan előnyt.
+  </li>
+</ul>
 
 <h1 id="dokumentacios-kovetelmenyek">8. Dokumentációkkal kapcsolatos követelmények</h1>
 
+<ul>
+  <li>
+    A projekt dokumentációja digitális formában készül, és tartalmazza a játék működésének, szabályainak és felépítésének leírását. A rendszerterv részei a szöveges dokumentumok, az UML-diagramok, az adatbázis tervei, valamint a felhasználói felület vázlatai.
+  </li>
+  <li>
+    A dokumentumokat szerkeszthető formátumban, illetve a végleges változatokat PDF-formátumban kell tárolni. A diagramok és a felülettervek digitális képként vagy szerkeszthető formátumban is elkészíthetők. A dokumentációnak áttekinthetőnek, egységes szerkezetűnek és naprakésznek kell lennie. A külső forrásokat megfelelően hivatkozni kell, a közös munka során pedig biztosítani kell a módosítások nyomon követhetőségét.
+  </li>
+</ul>
+
 <h1 id="kockazatlista">9. Kockázat lista</h1>
 
+<table>
+  <tr>
+    <th>Kockázat</th>
+    <th>Részletes leírás</th>
+    <th>Megoldás/csökkentés</th>
+  </tr>
+  <tr>
+    <td><b>Határidő csúszása</b></td>
+    <td>A feladatok összetettsége vagy a nem megfelelő időbeosztás miatt a dokumentáció nem készül el időben.</td>
+    <td>Feladatok felosztása, részfeladatok határidejének meghatározása, rendszeres ellenőrzés.</td>
+  </tr>
+  <tr>
+    <td><b>Követelmények változása</b></td>
+    <td>A játék szabályai vagy funkciói a tervezés során módosulnak, ami további munkát eredményezhet.</td>
+    <td>A követelmények előzetes rögzítése, a módosítások közös egyeztetése.</td>
+  </tr>
+  <tr>
+    <td><b>Technológiai problémák</b></td>
+    <td>A választott technológiák vagy tervezési megoldások nem felelnek meg a játék igényeinek.</td>
+    <td>Előzetes tervezés, a technológiai döntések felülvizsgálata.</td>
+  </tr>
+  <tr>
+    <td><b>Játékmechanikai hibák</b></td>
+    <td>A játékszabályok között ellentmondások alakulnak ki, vagy egyes mechanikák nem működnek megfelelően.</td>
+    <td>A szabályok közös ellenőrzése, UML-diagramok készítése, konkrét játékszituációk elemzése.</td>
+  </tr>
+  <tr>
+    <td><b>Kommunikációs problémák</b></td>
+    <td>A csoporttagok közötti félreértések vagy az információhiány hátráltatják a közös munkát.</td>
+    <td>Rendszeres megbeszélések, közös dokumentáció, feladatok és felelősségi körök egyértelmű meghatározása.</td>
+  </tr>
+  <tr>
+    <td><b>Emberi erőforrás hiánya</b></td>
+    <td>Betegség, egyéb elfoglaltság vagy eltérő leterheltség miatt egyes feladatok elvégzése késhet.</td>
+    <td>A feladatok megfelelő elosztása, tartalékidő biztosítása, szükség esetén a feladatok átszervezése.</td>
+  </tr>
+  <tr>
+    <td><b>Adatmodell hibái</b></td>
+    <td>Az adatbázis tervezése nem veszi figyelembe a játék működéséhez szükséges adatokat és kapcsolatokat.</td>
+    <td>Az adatmodell és a játékmechanikák összehangolása, a tervek rendszeres felülvizsgálata.</td>
+  </tr>
+  <tr>
+    <td><b>Dokumentációs hibák</b></td>
+    <td>A dokumentáció egyes részei hiányosak, pontatlanok vagy ellentmondanak egymásnak.</td>
+    <td>Egységes formátum használata, közös ellenőrzés, a dokumentumok folyamatos frissítése.</td>
+  </tr>
+  <tr>
+    <td><b>Verziókezelési problémák</b></td>
+    <td>A párhuzamos módosítások miatt elveszhetnek változtatások, vagy eltérő dokumentumváltozatok alakulhatnak ki.</td>
+    <td>Git és GitHub használata, rendszeres mentés, a módosítások összehangolása.</td>
+  </tr>
+</table>
+
 <h1 id="szotar">10. Szótár</h1>
+
+<ul>
+
+  <li>
+    <b>Civilization</b>– Körökre osztott stratégiai játék, amelyben a játékos egy civilizációt irányít, városokat fejleszt és nyersanyagokat gyűjt.
+  </li>
+
+  <li>
+    <b>Játékmechanika</b> – A játék működését meghatározó szabályok és folyamatok összessége.
+  </li>
+
+  <li>
+    <b>Nyersanyag</b> – A játék során megszerezhető és felhasználható erőforrás, amely az építkezést, a fejlesztéseket és az egységek előállítását teszi lehetővé.
+  </li>
+
+  <li>
+    <b>Játékállapot</b> – A játék egy adott pillanatban érvényes adatainak összessége, például a városok, az egységek és a nyersanyagok állapota.
+  </li>
+
+  <li>
+    <b>Adatbázis</b> – A játék működéséhez szükséges adatok rendezett tárolására szolgáló rendszer.
+  </li>
+
+  <li>
+    <b>Adatmodell</b> – Az adatok tulajdonságait és egymáshoz való kapcsolatait leíró modell.
+  </li>
+
+  <li>
+    <b>UML</b> – A rendszer felépítésének és működésének ábrás bemutatására szolgáló szabványos jelölésrendszer.
+  </li>
+
+  <li>
+    <b>Osztálydiagram</b> – A rendszer osztályait, azok tulajdonságait és kapcsolatait bemutató ábra.
+  </li>
+
+  <li>
+    <b>Algoritmus</b> – Egy feladat megoldására szolgáló, meghatározott lépésekből álló eljárás.
+  </li>
+
+  <li>
+  <b>Útvonalkeresés</b> – Annak meghatározása, hogy egy egység milyen útvonalon juthat el a céljához a játék szabályainak figyelembevételével.
+  </li>
+
+  <li>
+    <b>Játékegyensúly</b> – A játék elemei közötti megfelelő arány, amely biztosítja, hogy egyik stratégia se jelentsen indokolatlan előnyt.
+  </li>
+
+  <li>
+    <b>Rendszerterv</b> – A tervezett rendszer felépítését és működését bemutató dokumentáció.
+  </li>
+
+  <li>
+    <b>C#</b> – Programozási nyelv, amely a játék későbbi megvalósítására használható.
+  </li>
+
+  <li>
+    <b>MySQL</b> – Relációs adatbázis-kezelő rendszer, amely az adatok táblákban történő tárolását és kezelését teszi lehetővé.
+  </li>
+
+  <li>
+    <b>Git</b> – Verziókezelő rendszer, amely nyomon követi a fájlokon végrehajtott módosításokat.
+  </li>
+
+  <li>
+    <b>GitHub</b> – Online szolgáltatás, amely támogatja a projektek közös tárolását és a csoportmunka összehangolását.
+  </li>
+
+  <li>
+  <b>Validáció</b> – Annak ellenőrzése, hogy a megtervezett rendszer megfelel-e a meghatározott követelményeknek.
+  </li>
+
+</ul>
 
 </body>
 </html>
