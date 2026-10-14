@@ -334,21 +334,79 @@ a későbbiekben közösségi funkciók vagy egyéb kiegészítő szolgáltatás
 </ul>
 
 
-<h1 id="vegtermek">4. Végtermék</h1>
+<h1>4. A végtermék áttekintése</h1>
+<p>
+    Ebben a fejezetben a Foundation végleges, kiadásra szánt verziójának legfontosabb jellemzőit és működési feltételeit foglaljuk össze. A játék alapvetően egy ingyenes, böngészőből azonnal elérhető (free-to-play) stratégiai élmény lesz, melynek célja a Civilization nevű játékhoz hasonló élmény online elérhető formában.
+</p>
 
-<h2 id="termek-kapcsolatai">4.1 A termék kapcsolatai</h2>
+<h2>4.1 A termék kapcsolatai</h2>
+<p>
+    A Foundation alapvetően egy böngészőből futtatható alkalmazás. A rendszer három fő részből áll: a frontendből (amit a játékos lát), a backendből (a szerver, ami a szabályokat és az AI-t kezeli), és egy MySQL adatbázisból (ahol a mentéseket tároljuk). Ezen a kliens-szerver felépítésen kívül a játék nem kapcsolódik más külső rendszerhez.
+</p>
 
-<h2 id="hasznalat-elonyei">4.2. A termék használatának előnyei</h2>
+<h2>4.2. A termék használatának előnyei</h2>
+<table>
+  <tr>
+    <th class="center">A megrendelő haszna (előnyei)</th>
+    <th class="center">Az ezt támogató rendszer jellemző(k)</th>
+  </tr>
+  <tr>
+    <td>Gyorsan, telepítés nélkül elkezdhető a játék.</td>
+    <td>Webalapú, böngészőből futó felület.</td>
+  </tr>
+  <tr>
+    <td>Sokféleképpen lehet nyerni, többféle játékstílust támogat.</td>
+    <td>Háromféle győzelmi feltétel (katonai, technológiai, gazdasági).</td>
+  </tr>
+  <tr>
+    <td>Bármikor abba lehet hagyni és később folytatni.</td>
+    <td>Adatbázis alapú mentés (Save/Load) funkció.</td>
+  </tr>
+</table>
 
-<h2 id="feltetelezesek-fuggosegek">4.3. Feltételezések és függőségek</h2>
+<h2>4.3. Feltételezések és függőségek</h2>
+<ul>
+    <li>Feltételezzük, hogy a játékosnak van stabil internetkapcsolata, mert anélkül nem tud kommunikálni a szerverrel.</li>
+    <li>Feltételezzük, hogy az ingyenes webtárhely elég lesz a mentési fájlok tárolására. Ha mégsem, akkor korlátoznunk kell, hogy egy játékos hány mentést készíthet.</li>
+    <li>Feltételezzük, hogy a játékos modern böngészőt használ, ami bírja a 2D-s grafikai megjelenítést.</li>
+</ul>
 
-<h2 id="koltsegbecsles">4.4 Költségbecslés</h2>
+<h2>4.4 Költségbecslés</h2>
+<p>
+    A projektet egyetemi feladatként csináljuk, így a munkadíjjal nem számolunk. Csak ingyenes fejlesztői eszközöket használunk. Ha a játékot élesben ki szeretnénk adni, akkor egy webszervert és egy domain nevet kéne bérelni, ami nagyjából évi 20-30 ezer forintba kerülne.
+</p>
 
-<h2 id="installacio">4.5. Installáció</h2>
+<h2>4.5. Installáció</h2>
+<p>
+    A játékosoknak nem kell telepíteniük semmit, egyszerűen csak megnyitják a weboldalt. 
+    Nekünk (fejlesztőknek) annyi a dolgunk a beüzemelésnél, hogy felrakjuk a kódokat a webszerverre, és lefuttatjuk a szkripteket, amik létrehozzák az adatbázist.
+</p>
 
-<h1 id="vegtermek-jellemzoi">5. A végtermék jellemzői, biztosított szolgáltatások</h1>
+<h2>4.6 A végtermék jellemzőinek összefoglalása</h2>
+<ul>
+    <li><b>Platform:</b> Webes böngésző (Google Chrome, Firefox stb.).</li>
+    <li><b>Üzleti modell:</b> Teljesen ingyenes (Free-to-play).</li>
+    <li><b>Grafika:</b> 2D felülnézetes nézet (rács vagy hex alapú).</li>
+    <li><b>Játékélmény:</b> Körökre osztott, AI (gép) elleni egyjátékos stratégia, nyersanyag- és birodalomépítéssel.</li>
+</ul>
 
-<h1 id="korlatozasok">6. Korlátozások</h1>
+<h1>5. A végtermék jellemzői, biztosított szolgáltatások</h1>
+<ul>
+    <li><b>Pályagenerálás:</b> Egy 2D-s rácsos térkép létrehozása, amin a nyersanyagok véletlenszerűen vannak elszórva.</li>
+    <li><b>Körökre osztott mozgás:</b> A játékos és az AI felváltva cselekszik (mozgás, támadás, építés).</li>
+    <li><b>Gazdaság és Építkezés:</b> Nyersanyagok gyűjtögetése, amikből épületeket és egységeket lehet venni.</li>
+    <li><b>Harcrendszer:</b> Katonai egységek képzése és az ellenfél megtámadása.</li>
+    <li><b>Fejlesztési fa (Tech tree):</b> Tudományos kutatások, amikkel új technológiákat lehet feloldani a játék közben.</li>
+    <li><b>Mentés funkció:</b> A játék aktuális állásának elmentése, hogy később onnan lehessen folytatni.</li>
+</ul>
+
+
+<h1>6. Korlátozások</h1>
+<ul>
+    <li><b>Hardverigény:</b> Bár csak egy böngészős játékról van szó, ha nagyon nagy a térkép vagy túl sok az egység, a játék beakadhat a gyengébb gépeken.</li>
+    <li><b>Kizárólag asztali gépre (PC):</b> A kis ikonok és a sok kattintás miatt a játék mobilon játszhatatlan lenne, ezért csak egeres, billentyűzetes irányításra optimalizáljuk.</li>
+    <li><b>Egyjátékos mód (Singleplayer):</b> A félév rövidsége miatt hálózati multiplayer mód nem készül, a játékos csak a gép (AI) ellen fog tudni játszani.</li>
+</ul>
 
 <h1 id="minosegi-elvarasok">7. Minőségi elvárások</h1>
 <ul>
