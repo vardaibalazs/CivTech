@@ -1,0 +1,124 @@
+flowchart LR
+    %% AKTOROK (Szereplők)
+    Player((Játékos / Látogató))
+    Admin((Fejlesztő / Admin))
+    AI((AI Ellenfél))
+    DB((Szerver / Adatbázis))
+
+    %% 0. FELHASZNÁLÓKEZELÉS ÉS HITELESÍTÉS (ÚJ)
+    subgraph Felhasznalokezeles [Felhasználókezelés és Hitelesítés]
+        Register([Regisztráció])
+        Login([Bejelentkezés])
+        Logout([Kijelentkezés])
+        PassReset([Jelszó visszaállítása / módosítása])
+        Auth([Adatbázis hitelesítés és jogosultság ellenőrzés])
+    end
+
+    %% 1. JÁTÉK MUNKAMENET ÉS RENDSZER
+    subgraph Munkamenet [Játék Munkamenet és Kezelés]
+        Start([Új játék indítása])
+        Settings([Játékparaméterek beállítása])
+        Save([Játékállapot elmentése])
+        Load([Játékállapot betöltése])
+        MapGen([Pálya és nyersanyagok generálása])
+    end
+
+    %% 2. GAZDASÁG ÉS ÉPÍTKEZÉS
+    subgraph Gazdasag [Gazdaság és Építkezés]
+        Res([Nyersanyagok begyűjtése])
+        Build([Új épület felhúzása])
+        Upgrade([Épület fejlesztése])
+        Cost([Nyersanyag-költség levonása])
+    end
+
+    %% 3. KATONASÁG ÉS HARC
+    subgraph Katonasag [Katonaság és Harc]
+        Recruit([Katonai egység toborzása])
+        Move([Egység mozgatása])
+        Attack([Ellenség/Bázis megtámadása])
+        DmgCalc([Sebzés és veszteség számítása])
+    end
+
+    %% 4. TECHNOLÓGIA
+    subgraph Technologia [Technológia és Fejlődés]
+        TechTree([Fejlesztési fa megtekintése])
+        Research([Új technológia kutatása])
+    end
+
+    %% 5. KÖRKEZELÉS ÉS GYŐZELEM
+    subgraph Korkezeles [Körkezelés és Győzelem]
+        EndTurn([Kör befejezése])
+        AICalc([AI lépések kiszámítása és végrehajtása])
+        WinCheck([Győzelmi feltételek ellenőrzése])
+        MilWin([Katonai győzelem kiértékelése])
+        EcoWin([Gazdasági győzelem kiértékelése])
+        TechWin([Technológiai győzelem kiértékelése])
+    end
+
+    %% 6. ADMINISZTRÁCIÓ
+    subgraph AdminF [Adminisztrátori Funkciók]
+        Balance([Játékmechanikai értékek módosítása])
+        ManageSaves([Szerveroldali mentések kezelése])
+        ManageUsers([Felhasználói fiókok kezelése / tiltása])
+    end
+
+    %% KAPCSOLATOK: Játékos (Player)
+    Player --- Register
+    Player --- Login
+    Player --- Logout
+    Player --- PassReset
+    Player --- Start
+    Player --- Settings
+    Player --- Save
+    Player --- Load
+    Player --- Build
+    Player --- Upgrade
+    Player --- Recruit
+    Player --- Move
+    Player --- TechTree
+    Player --- Research
+    Player --- EndTurn
+
+    %% KAPCSOLATOK: Admin
+    Admin --- Balance
+    Admin --- ManageSaves
+    Admin --- ManageUsers
+
+    %% KAPCSOLATOK: AI és Szerver/Adatbázis
+    AI --- AICalc
+    DB --- Auth
+    DB --- Save
+    DB --- Load
+    DB --- MapGen
+    DB --- ManageSaves
+    DB --- ManageUsers
+
+    %% INCLUDES (Kötelező belső hívások)
+    Login -. "<< include >>" .-> Auth
+    Register -. "<< include >>" .-> Auth
+    PassReset -. "<< include >>" .-> Auth
+    
+    Start -. "<< include >>" .-> MapGen
+    Build -. "<< include >>" .-> Cost
+    Upgrade -. "<< include >>" .-> Cost
+    Recruit -. "<< include >>" .-> Cost
+    Research -. "<< include >>" .-> Cost
+    Attack -. "<< include >>" .-> DmgCalc
+    EndTurn -. "<< include >>" .-> Res
+    EndTurn -. "<< include >>" .-> AICalc
+    EndTurn -. "<< include >>" .-> WinCheck
+    
+    WinCheck -. "<< include >>" .-> MilWin
+    WinCheck -. "<< include >>" .-> EcoWin
+    WinCheck -. "<< include >>" .-> TechWin
+
+    %% EXTENDS (Opcionális / Kiterjesztő hívások)
+    Settings -. "<< extend >>" .-> Start
+    Move -. "<< extend >>" .-> Attack
+
+    %% FORMÁZÁS (Színek és stílusok)
+    classDef actor fill:#ffe0b2,stroke:#f57c00,stroke-width:2px,color:#000
+    classDef usecase fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#000
+    
+    class Player,AI,DB,Admin actor
+    class Register,Login,Logout,PassReset,Auth,Start,Settings,Save,Load,MapGen,Res,Build,Upgrade,Cost,Recruit,Move,Attack,DmgCalc,TechTree,Research,EndTurn,AICalc,WinCheck,MilWin,EcoWin,TechWin,Balance,ManageSaves,ManageUsers usecase
