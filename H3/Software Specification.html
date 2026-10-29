@@ -116,50 +116,136 @@
 <p><a href="#alkalmazott szabvanyok">12. Alkalmazott szabványok</a></p>
 <p><a href="#mellekletek">13. Mellékletek</a></p>
 
-<h1 id="bevezetes">1. Bevezetés</h1>
-<p></p>
+<h1 id="bevezetes" style="text-align: justify;">1. Bevezetés</h1>
+<p style="text-align: justify;">Ez a dokumentum a Foundation nevű 2D-s, körökre osztott stratégiai játék szoftverkövetelmény-specifikációja. A célunk egy olyan átfogó leírás elkészítése, amiből a fejlesztőcsapat minden tagja tisztán látja a feladatokat, és ami alapján el tudjuk kezdeni a tényleges programozást. A Foundation egy böngészőből ingyenesen játszható, Civilization-jellegű stratégiai játék lesz, amelyben a játékos célja a birodalma felépítése és az ellenség legyőzése.</p>
 
-<h1 id="attekintes">2. Áttekintés</h1>
-<p></p>
+<h1 id="attekintes" style="text-align: justify;">2. Áttekintés</h1>
+<p style="text-align: justify;">A játék egy klasszikus kliens-szerver architektúrára épül. A játékos a böngészőjében (kliens) látja a pályát, adja ki a parancsokat és irányítja az egységeit. A háttérben dolgozó szerver (backend) felel a játékszabályok betartatásáért, a mesterséges intelligencia (AI) lépéseinek kiszámításáért, valamint egy relációs adatbázisban tárolja a felhasználók adatait és a mentett játékállapotokat.</p>
 
-<h1 id="funkcions">3. A rendszer funkciói</h1>
-<p></p>
+<h1 id="funkcions" style="text-align: justify;">3. A rendszer funkciói</h1>
+<p style="text-align: justify;">A rendszernek számos összekapcsolódó funkciót kell ellátnia. Ide tartozik a felhasználók regisztrációja és hitelesítése, a 2D-s térkép és a nyersanyagok véletlenszerű generálása, a körök kezelése (mozgás, támadás, építkezés, toborzás), a nyersanyagköltségek levonása, a technológiai fa feloldása, valamint a győzelmi feltételek ellenőrzése. Ezen felül kulcsfontosságú a játékállapotok felhőbe történő mentése és visszatöltése.</p>
 
-<h1 id="hasznalhatosag">4. Használhatóság</h1>
-<p></p>
+<h2 style="text-align: justify;">3.1 Use-case diagram</h2>
+<p style="text-align: justify;">Az alábbi diagram a Foundation rendszer teljes működési modelljét, a szereplőket és az általuk indított, illetve a háttérben lefutó folyamatokat ábrázolja.</p>
 
-<h1 id="megbizhatosag">5. Megbízhatóság</h1>
-<p></p>
+<div style="text-align: center; margin: 20px 0;">
+    <img src="use-case diagram.png"  style="max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);">
+</div>
 
-<h1 id="teljesitmeny">6. Teljesítmény</h1>
-<p></p>
+<h2 style="text-align: justify;">3.2 Szereplők (Aktorok) leírása</h2>
 
-<h1 id="tamogatottsag">7. Támogatottság</h1>
-<p></p>
+<p style="text-align: justify;"><b>Játékos / Látogató (Player):</b> A rendszer elsődleges felhasználója, aki a böngészőn keresztül lép interakcióba a játékkal. Ő indítja el a regisztrációs és bejelentkezési folyamatokat, valamint a játékmenet során a legtöbb funkciót (építés, mozgás, toborzás, kutatás, kör befejezése) is ő vezérli.</p>
 
-<h1 id="korlatozasok">8. Tervezési korlátozások</h1>
-<p></p>
+<p style="text-align: justify;"><b>Fejlesztő / Admin (Admin):</b> A fejlesztőcsapat tagja, aki különleges jogosultságokkal rendelkezik. Az ő feladata a játékegyensúly (balance) karbantartása, a szerveroldali mentések kezelése, valamint a felhasználói fiókok adminisztrációja (pl. tiltás, törlés).</p>
 
-<h1 id="help">9. On-line dokumentáció és Help rendszer</h1>
-<p></p>
+<p style="text-align: justify;"><b>AI Ellenfél (AI):</b> A mesterséges intelligencia, amely a gép által irányított játékosokat vezérli. Passzív szereplő mindaddig, amíg a játékos be nem fejezi a körét. Ekkor a saját logikája alapján kiszámítja és végrehajtja a lépéseit.</p>
 
-<h1 id="komponensek">10. Felhasznált kész komponensek</h1>
-<p></p>
+<p style="text-align: justify;"><b>Szerver / Adatbázis (DB):</b> A háttérrendszer, amely az adatok tárolásáért és feldolgozásáért felel. Részt vesz a felhasználók hitelesítésében, a játékállapotok mentésében és betöltésében, a pályagenerálásban, valamint végrehajtja az adminisztrátori utasításokat.</p>
 
-<h1 id="interface">11. Interfészek</h1>
-<p></p>
+<h2 style="text-align: justify;">3.3 Use-case-ek (Funkciók) részletes specifikációja</h2>
 
-<h1 id="user interface">11.1. Felhasználói interfészek</h1>
-<p></p>
+<h3 style="text-align: justify;">3.3.1 Felhasználókezelés és Hitelesítés</h3>
 
-<h1 id="hardware interface">11.2. Hardware interfészek</h1>
-<p></p>
+<p style="text-align: justify;"><b>Regisztráció:</b> A látogató egy űrlapon megadja az adatait (felhasználónév, e-mail, jelszó) egy új fiók létrehozásához. A folyamat kötelezően meghívja az <i>Adatbázis hitelesítés és jogosultság ellenőrzés</i> funkciót az adatok validálására és mentésére.</p>
 
-<h1 id="alkalmazott szabvanyok">12. Alkalmazott szabványok</h1>
-<p></p>
+<p style="text-align: justify;"><b>Bejelentkezés:</b> A játékos megadja a hitelesítő adatait a rendszerbe való belépéshez. A folyamat kötelezően (include) meghívja az <i>Adatbázis hitelesítés és jogosultság ellenőrzés</i> funkciót a jelszó és a felhasználónév ellenőrzésére.</p>
 
-<h1 id="mellekletek">13. Mellékletek</h1>
-<p></p>
+<p style="text-align: justify;"><b>Kijelentkezés:</b> A játékos megszakítja az aktív munkamenetét, és visszatér a kezdőképernyőre.</p>
+
+<p style="text-align: justify;"><b>Jelszó visszaállítása / módosítása:</b> A játékos új jelszót állíthat be az elfelejtett vagy lecserélni kívánt jelszava helyett. Ez szintén kötelezően meghívja az <i>Adatbázis hitelesítés és jogosultság ellenőrzés</i> funkciót.</p>
+
+<p style="text-align: justify;"><b>Adatbázis hitelesítés és jogosultság ellenőrzés:</b> Belső, szerveroldali folyamat, amely a jelszavak hash-elését, az adatok egyezésének vizsgálatát és a jogosultsági szintek lekérdezését végzi az adatbázisból.</p>
+
+<h3 style="text-align: justify;">3.3.2 Játék Munkamenet és Kezelés</h3>
+
+<p style="text-align: justify;"><b>Új játék indítása:</b> A játékos elindít egy új mérkőzést. A funkció kötelezően (include) meghívja a <i>Pálya és nyersanyagok generálása</i> folyamatot. Ezt a funkciót kiterjesztheti (extend) a <i>Játékparaméterek beállítása</i>, ha a játékos egyedi beállításokat szeretne használni.</p>
+
+<p style="text-align: justify;"><b>Játékparaméterek beállítása:</b> A játékos módosíthatja a kezdőfeltételeket (pl. térkép mérete, AI ellenfelek száma). Opcionális (extend) lépés az új játék indítása előtt.</p>
+
+<p style="text-align: justify;"><b>Játékállapot elmentése:</b> A játékos aktuális mérkőzésének adatbázisba történő lementése, amit a Szerver hajt végre.</p>
+
+<p style="text-align: justify;"><b>Játékállapot betöltése:</b> Egy korábban elmentett mérkőzés adatainak lekérdezése az adatbázisból, és a játéktér visszaállítása.</p>
+
+<p style="text-align: justify;"><b>Pálya és nyersanyagok generálása:</b> A háttérrendszer (Szerver) algoritmusai alapján felépül a 2D-s térkép, és elhelyezésre kerülnek rajta a különböző nyersanyagok.</p>
+
+<h3 style="text-align: justify;">3.3.3 Gazdaság és Építkezés</h3>
+
+<p style="text-align: justify;"><b>Nyersanyagok begyűjtése:</b> A játékos a körök során gyarapítja a nyersanyagkészletét a birtokolt területek és épületek alapján.</p>
+
+<p style="text-align: justify;"><b>Új épület felhúzása:</b> A játékos kijelöl egy épületet és elhelyezi a térképen. A művelet kötelezően (include) meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
+
+<p style="text-align: justify;"><b>Épület fejlesztése:</b> Egy már meglévő épület szintjének növelése. Szintén kötelezően meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
+
+<p style="text-align: justify;"><b>Nyersanyag-költség levonása:</b> Belső rendszerfolyamat, amely ellenőrzi, hogy rendelkezésre áll-e a megfelelő mennyiségű nyersanyag, és ha igen, levonja azt a játékos készletéből.</p>
+
+<h3 style="text-align: justify;">3.3.4 Katonaság és Harc</h3>
+
+<p style="text-align: justify;"><b>Katonai egység toborzása:</b> A játékos új egységeket hoz létre a hadseregébe. Kötelezően (include) meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
+
+<p style="text-align: justify;"><b>Egység mozgatása:</b> A játékos egy kiválasztott egységet egy új mezőre irányít. Ha az adott mezőn ellenséges egység tartózkodik, a mozgás kiterjesztődik (extend) az <i>Ellenség/Bázis megtámadása</i> funkcióra.</p>
+
+<p style="text-align: justify;"><b>Ellenség/Bázis megtámadása:</b> Harci interakció az ellenféllel. Kötelezően (include) meghívja a <i>Sebzés és veszteség számítása</i> alfolyamatot.</p>
+
+<p style="text-align: justify;"><b>Sebzés és veszteség számítása:</b> A rendszer kiszámítja a harc kimenetelét az egységek statisztikái alapján, és levonja a megfelelő életerő-pontokat.</p>
+
+<h3 style="text-align: justify;">3.3.5 Technológia és Fejlődés</h3>
+
+<p style="text-align: justify;"><b>Fejlesztési fa megtekintése:</b> A játékos megnyitja és böngészi a technológiai fát.</p>
+
+<p style="text-align: justify;"><b>Új technológia kutatása:</b> A játékos kiválaszt egy kutatandó technológiát. Ez kötelezően (include) meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
+
+<h3 style="text-align: justify;">3.3.6 Körkezelés és Győzelem</h3>
+
+<p style="text-align: justify;"><b>Kör befejezése:</b> A játékos átadja az irányítást. A funkció egymás után kötelezően (include) meghívja a <i>Nyersanyagok begyűjtése</i>, az <i>AI lépések kiszámítása és végrehajtása</i>, valamint a <i>Győzelmi feltételek ellenőrzése</i> alfolyamatokat.</p>
+
+<p style="text-align: justify;"><b>AI lépések kiszámítása és végrehajtása:</b> A mesterséges intelligencia (AI Ellenfél) feldolgozza a pálya állapotát, és végrehajtja a saját lépéseit (mozgás, építés, harc).</p>
+
+<p style="text-align: justify;"><b>Győzelmi feltételek ellenőrzése:</b> A rendszer megvizsgálja, hogy valamelyik játékos elérte-e a végső célt. Kötelezően (include) lefuttatja a <i>Katonai győzelem kiértékelése</i>, a <i>Gazdasági győzelem kiértékelése</i> és a <i>Technológiai győzelem kiértékelése</i> funkciókat.</p>
+
+<p style="text-align: justify;"><b>Katonai, Gazdasági és Technológiai győzelem kiértékelése:</b> Specifikus ellenőrző folyamatok, amelyek megvizsgálják az adott győzelmi kategória kritériumainak teljesülését.</p>
+
+<h3 style="text-align: justify;">3.3.7 Adminisztrátori Funkciók</h3>
+
+<p style="text-align: justify;"><b>Játékmechanikai értékek módosítása:</b> Az adminisztrátor (Fejlesztő) a háttérből bele tud nyúlni a játékegyensúlyba (pl. egységek ereje, épületek ára).</p>
+
+<p style="text-align: justify;"><b>Szerveroldali mentések kezelése:</b> Az adminisztrátor hozzáfér az adatbázisban tárolt összes mentéshez, és szükség esetén törölheti azokat ha mondjuk csalás vagy egyéb szabálytanaság merülne fel.</p>
+
+<p style="text-align: justify;"><b>Felhasználói fiókok kezelése / tiltása:</b> Az adminisztrátor menedzselheti a játékosok profiljait az adatbázisban, jelszavakat állíthat vissza, vagy inaktiválhatja a problémás fiókokat.</p>
+<h1 id="hasznalhatosag" style="text-align: justify;">4. Használhatóság</h1>
+<p style="text-align: justify;">Mivel a játék egy komplex stratégia, sok apró ikonnal, gombbal és információval, a felületet kifejezetten asztali gépekre, egeres és billentyűzetes irányításra optimalizáljuk. Mobilon ez a fajta játékmenet élvezhetetlen lenne, így azt nem támogatjuk. Fontos, hogy a menük átláthatóak legyenek, és a játékos azonnali, egyértelmű vizuális visszajelzést kapjon (például pirosra vált a szöveg, ha nincs elég nyersanyaga egy épülethez).</p>
+
+<h1 id="megbizhatosag" style="text-align: justify;">5. Megbízhatóság</h1>
+<p style="text-align: justify;">A rendszer legkritikusabb pontja a mentési folyamat megbízhatósága. A játékosok akár több órát is beleölhetnek egyetlen meccsbe, így garantálnunk kell, hogy a szerverre küldött mentések nem vesznek el és nem korrumpálódnak. Emellett a szervernek folyamatosan és stabilan kell futnia, hogy játék közben ne szakadjon meg a kapcsolat a kliens és a backend között.</p>
+
+<h1 id="teljesitmeny" style="text-align: justify;">6. Teljesítmény</h1>
+<p style="text-align: justify;">A böngészős futtatás miatt a kliensoldali teljesítmény szűk keresztmetszet lehet. Törekednünk kell arra, hogy a térkép kirajzolása és a sok egység animálása még egy átlagos irodai laptopon is akadásmentes legyen. A szerveroldalon pedig a mesterséges intelligencia algoritmusait kell úgy megírni, hogy a gép gyorsan lépjen, és a játékosnak ne kelljen sokat várnia két kör között.</p>
+
+<h1 id="tamogatottsag" style="text-align: justify;">7. Támogatottság</h1>
+<p style="text-align: justify;">A forráskódot jól strukturáltan, modulárisan építjük fel és kommentezzük, hogy esetleges hotfixek vagy patchelések alkalmával bármely csapattag könnyen bele tudjon nyúlni. Verziókezelésre GitHub-ot használunk, a hibajegyeket és a feladatokat is ott vezetjük. A backend és a frontend éles szétválasztása megkönnyíti a későbbi hibajavításokat vagy új elemek (pl. új katonai egységek) hozzáadását a játékhoz.</p>
+
+<h1 id="korlatozasok" style="text-align: justify;">8. Tervezési korlátozások</h1>
+<p style="text-align: justify;">A legnagyobb korlátunk az idő: a félév végére egy működő, bemutatható programot kellene leadnunk. Emiatt a hálózati többjátékos (multiplayer) mód lefejlesztését elvetettük, a játék kizárólag egyjátékos, AI elleni módban fog futni. További korlát a webalapú technológia, ami miatt a túlzottan látványos, 3D-s grafikai effektekről le kell mondanunk az egyenletes futásteljesítmény javára.</p>
+
+<h1 id="help" style="text-align: justify;">9. On-line dokumentáció és Help rendszer</h1>
+<p style="text-align: justify;">A játékba beépítünk egy egyszerű "Civilopédia" jellegű lexikont (Help menüt), ahol a játékosok játék közben is utánaolvashatnak az egyes épületek, egységek és technológiák statisztikáinak és funkcióinak. Ezen kívül az első játék indításakor felugró tippek segítik majd az alapvető irányítás elsajátítását.</p>
+
+<h1 id="komponensek" style="text-align: justify;">10. Felhasznált kész komponensek</h1>
+<p style="text-align: justify;">Az adatbázis kezeléséhez MySQL-t használunk. A grafikai elemekhez (egységek, épületek sprite-jai, térképelemek) nyílt forráskódú, ingyenes (royalty-free) 2D asset csomagokat fogunk felhasználni, hogy a csapatnak ne kelljen grafikusként mindent a nulláról megrajzolnia. A frontend vizuális megjelenítéséhez a HTML5 Canvas technológiáját használjuk.</p>
+
+<h1 id="interface" style="text-align: justify;">11. Interfészek</h1>
+<p style="text-align: justify;">A rendszer interfészei biztosítják a kommunikációt a játékos, az őt kiszolgáló hardver, valamint a háttérben futó játékszerver között.</p>
+
+<h1 id="user interface" style="text-align: justify;">11.1. Felhasználói interfészek</h1>
+<p style="text-align: justify;">A felhasználói felület a webböngésző ablakában jelenik meg. Főbb elemei: egy nagy, görgethető játéktér középen, egy minimap a gyors tájékozódáshoz a sarokban, egy alsó vezérlőpanel az egységek és épületek parancsaihoz, valamint felugró ablakok a fejlesztési fának, a diplomáciának és a mentés/betöltés menünek.</p>
+
+<h1 id="hardware interface" style="text-align: justify;">11.2. Hardware interfészek</h1>
+<p style="text-align: justify;">A szoftver nem igényel semmilyen speciális hardvert. A standard PC-s beviteli eszközökre (egér a kijelölésekhez és kattintásokhoz, billentyűzet a gyorsgombokhoz) és egy alapvető hálózati kártyára van szükség az internetkapcsolat fenntartásához.</p>
+
+<h1 id="alkalmazott szabvanyok" style="text-align: justify;">12. Alkalmazott szabványok</h1>
+<p style="text-align: justify;">A fejlesztés során követjük a standard webes technológiákat (HTML5, CSS3, modern JavaScript). A frontend és a backend közötti hálózati kommunikációhoz szabványos REST API-t és JSON adatformátumot használunk, az adatbázis felépítéséhez és lekérdezéséhez pedig az SQL szabványait. A backend logika megírásakor a C# nyelvre, valamint a Microsoft által ajánlott C# kódolási konvenciókra támaszkodunk.</p>
+
+<h1 id="mellekletek" style="text-align: justify;">13. Mellékletek</h1>
+<p style="text-align: justify;">Ehhez a dokumentumhoz mellékeljük a projekt Szótárát, amely a játék specifikus fogalmait (pl. győzelmi feltételek, nyersanyagok, AI lépés) magyarázza el.</p>
 
 </body>
 </html>
