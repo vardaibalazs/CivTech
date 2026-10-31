@@ -60,7 +60,7 @@
 
 <div class="spacer"></div>
 
-<p class="center title"><b>Foundation</b></p>
+<p class="center title"><b>Foundation - Szótár</b></p>
 
 <div class="spacer"></div>
 
@@ -96,81 +96,213 @@
 </table>
 
 <br>
-<p class="right">2026.10.07</p>
+<p class="right">2026.10.28</p>
 
+<h1 id="szotar" style="text-align: justify;">Szótár</h1>
 
-<p><a href="#szotar">10. Szótár</a></p>
+<p style="text-align: justify;">Ez a dokumentum a Foundation szoftverkövetelmény specifikációjában szereplő szakterületi és informatikai szakkifejezések definícióit tartalmazza. A szótár célja a fejlesztők és a laikusok közötti félreértések elkerülése, a specifikáció és a Use-case modellek pontos értelmezése érdekében.</p>
 
-<h1 id="szotar">10. Szótár</h1>
+<div class="spacer"></div>
 
 <ul>
-
   <li>
-    <b>Civilization</b>– Körökre osztott stratégiai játék, amelyben a játékos egy civilizációt irányít, városokat fejleszt és nyersanyagokat gyűjt.
+    <b>Adatbázis</b> – A játék működéséhez szükséges adatok (pl. mentések, felhasználói fiókok) rendezett tárolására szolgáló szerveroldali rendszer.
   </li>
 
   <li>
-    <b>Játékmechanika</b> – A játék működését meghatározó szabályok és folyamatok összessége.
+    <b>Adatkorrupció</b> – Az adatok, például mentések sérülése a szerveren, amely olvashatatlanná vagy használhatatlanná teszi azokat.
   </li>
 
   <li>
-    <b>Nyersanyag</b> – A játék során megszerezhető és felhasználható erőforrás, amely az építkezést, a fejlesztéseket és az egységek előállítását teszi lehetővé.
+    <b>Adatmodell</b> – Az adatok tulajdonságait és egymáshoz való kapcsolatait leíró logikai felépítés a relációs adatbázisban.
   </li>
 
   <li>
-    <b>Játékállapot</b> – A játék egy adott pillanatban érvényes adatainak összessége, például a városok, az egységek és a nyersanyagok állapota.
+    <b>Aktor</b> – A szoftverrel interakcióba lépő enititás, például: Játékos, Fejlesztő vagy a szerver aki egy folyamatot indít el a rendszerben.
   </li>
 
   <li>
-    <b>Adatbázis</b> – A játék működéséhez szükséges adatok rendezett tárolására szolgáló rendszer.
+    <b>Algoritmus</b> – Egy adott probléma megoldására szolgáló, meghatározott lépésekből álló eljárás.
   </li>
 
   <li>
-    <b>Adatmodell</b> – Az adatok tulajdonságait és egymáshoz való kapcsolatait leíró modell.
+    <b>Asset csomag</b> – A játék fejlesztéséhez felhasznált, előre elkészített grafikai, hang- vagy vizuális elemek gyűjteménye.
   </li>
 
   <li>
-    <b>UML</b> – A rendszer felépítésének és működésének ábrás bemutatására szolgáló szabványos jelölésrendszer.
+    <b>Backend</b> – A rendszer háttérszolgáltatása, amely az adatok tárolásáért, a hitelesítésért, a játékszabályok betartatásáért felel.
   </li>
 
   <li>
-    <b>Osztálydiagram</b> – A rendszer osztályait, azok tulajdonságait és kapcsolatait bemutató ábra.
+    <b>Böngésző kliens</b> – A szoftver megjelenítésére és futtatására szolgáló webes környezet a felhasználó eszközén.
   </li>
 
   <li>
-    <b>Algoritmus</b> – Egy feladat megoldására szolgáló, meghatározott lépésekből álló eljárás.
+    <b>C#</b> – Objektumorientált programozási nyelv, amely a játék backend logikájának megvalósítására szolgál.
   </li>
 
   <li>
-  <b>Útvonalkeresés</b> – Annak meghatározása, hogy egy egység milyen útvonalon juthat el a céljához a játék szabályainak figyelembevételével.
+    <b>Civilization</b> – A projekt alapjául szolgáló, körökre osztott 4X stratégiai játékműfaj, amelyben a játékos városokat fejleszt és birodalmat épít.
   </li>
 
   <li>
-    <b>Játékegyensúly</b> – A játék elemei közötti megfelelő arány, amely biztosítja, hogy egyik stratégia se jelentsen indokolatlan előnyt.
+    <b>Civilopédia</b> – A játékba beépített help/segítségnyújtó rendszer, ahol a játékosok az épületekről, egységekről és a technológiákról  olvashatnak részletesen.
   </li>
 
   <li>
-    <b>Rendszerterv</b> – A tervezett rendszer felépítését és működését bemutató dokumentáció.
+    <b>Diplomácia</b> – A játékbeli interakciók és tárgyalások rendszere, amely a grafikus felületen keresztül érhető el.
   </li>
 
   <li>
-    <b>C#</b> – Programozási nyelv, amely a játék későbbi megvalósítására használható.
+    <b>Entitás</b> – Az adatbázisban nyilvántartott, önálló létezéssel bíró dolog (pl. egy regisztrált felhasználó profilja vagy egy elmentett mérkőzés).
   </li>
 
   <li>
-    <b>MySQL</b> – Relációs adatbázis-kezelő rendszer, amely az adatok táblákban történő tárolását és kezelését teszi lehetővé.
+    <b>Extend</b> – Az UML use-case diagramokban használt kapcsolat, amely azt jelöli, hogy egy folyamat opcionálisan kiterjedhet egy másikra (például az 'Egység mozgatása' kiválthatja az 'Ellenség megtámadását').
   </li>
 
   <li>
-    <b>Git</b> – Verziókezelő rendszer, amely nyomon követi a fájlokon végrehajtott módosításokat.
+    <b>Felhőalapú mentés</b> – A játékállapotok távoli adatbázis-szerveren történő tárolása a helyi gépre mentés helyett.
   </li>
 
   <li>
-    <b>GitHub</b> – Online szolgáltatás, amely támogatja a projektek közös tárolását és a csoportmunka összehangolását.
+    <b>Frontend</b> – A játék látható felhasználói felülete, ahol a játékos a böngészőből kiadja a parancsokat és követi az eseményeket.
   </li>
 
   <li>
-  <b>Validáció</b> – Annak ellenőrzése, hogy a megtervezett rendszer megfelel-e a meghatározott követelményeknek.
+    <b>Git és GitHub</b> – Verziókezelő rendszer , amely rögzíti a kódmódosításokat, és az ezt támogató felhőalapú szolgáltatás , amely a fejlesztőcsapat munkáját és a hibajegyeket hangolja össze.
+  </li>
+
+  <li>
+    <b>Győzelmi feltételek</b> – Azok a katonai, gazdasági vagy technológiai kritériumok, amelyek teljesülésének ellenőrzésével a rendszer megállapítja a mérkőzés végét.
+  </li>
+
+  <li>
+    <b>Hash-elés</b> – Titkosítási és biztonsági eljárás, amely során a felhasználók jelszavait kódolják, és visszafejthetetlen formában tárolják az adatbázisban.
+  </li>
+
+  <li>
+    <b>Hitelesítés</b> – A regisztrációs és bejelentkezési folyamatok során végrehajtott szerveroldali ellenőrzés a megadott adatok alapján.
+  </li>
+
+  <li>
+    <b>Hotfix/Patch</b> – A szoftver esetleges hibáinak utólagos javítása, vagy bármilyen szoftverfrissítés.
+  </li>
+
+  <li>
+    <b>HTML5 Canvas</b> – Modern webes technológia, amely lehetővé teszi a 2D-s grafikák és animációk megalkotását a böngészőn belül.
+  </li>
+
+  <li>
+    <b>Include</b> – Az UML use-case diagramokban használt kapcsolat, amely azt jelöli, hogy egy folyamat kötelezően meghív és lefuttat egy másikat (például az 'Új épület felhúzása' a 'Nyersanyag-költség levonását').
+  </li>
+
+  <li>
+    <b>Interface</b> – Kommunikációs és kapcsolódási felület a felhasználó és a rendszer között.
+  </li>
+
+  <li>
+    <b>Játékállapot</b> – A mérkőzés aktuális állása egy adott körben, amelyet a rendszer elmenthet és később betölthet.
+  </li>
+
+  <li>
+    <b>Játékegyensúly</b> – A játék elemei közötti megfelelő arány, amely biztosítja, hogy a mérkőzés kihívást nyújtson és tisztességes legyen.
+  </li>
+
+  <li>
+    <b>Játékmechanika</b> – A játék működését meghatározó szabályok és háttérfolyamatok.
+  </li>
+
+  <li>
+    <b>JSON</b> – Szabványos, ember által is olvasható adatformátum a kliens és a szerver közötti gyors hálózati adatcserére.
+  </li>
+
+  <li>
+    <b>Kliens-szerver architektúra</b> – Olyan szoftveres felépítés, ahol a felhasználó gépén futó program folyamatosan egy központi szerverrel kommunikál az interneten keresztül.
+  </li>
+
+  <li>
+    <b>Kódolási konvenciók</b> – A fejlesztőcsapat által elfogadott és betartott, egységes programozási szabályzat a tiszta kód érdekében.
+  </li>
+
+  <li>
+    <b>Körökre osztott</b> – Olyan stratégiai játékmód, ahol a Játékos és a gép által irányított AI Ellenfél nem valós időben, hanem egymást váltva "lépnek", hozzák meg a döntéseket.
+  </li>
+
+  <li>
+    <b>AI Ellenfél</b> – A gép által vezérelt játékos, amely a saját logikája alapján kiszámítja és csinálja a lépéseit.
+  </li>
+
+  <li>
+    <b>Minimap</b> – A játéktér vizuálisan kicsinyített, leegyszerűsített verziója a képernyő sarkában, a játékban lévő tájézkodáshoz.
+  </li>
+
+  <li>
+    <b>Moduláris felépítés</b> – A programkód önálló, könnyen cserélhető és karbantartható modulokra történő bontása.
+  </li>
+
+  <li>
+    <b>Munkamenet</b> – A játékos sikeres bejelentkezésétől a kijelentkezésig tartó kapcsolat a szerverrel.
+  </li>
+
+  <li>
+    <b>MySQL</b> – Nyílt forráskódú adatbázis-kezelő rendszer, amely az adatok táblázatos tárolását végzi.
+  </li>
+
+  <li>
+    <b>Nyersanyag</b> – A mérkőzés során begyűjthető virtuális erőforrás, amelynek költségét a rendszer levonja az építkezés, toborzás vagy technológiai kutatás során.
+  </li>
+
+  <li>
+    <b>Pályagenerálás</b> – Az 'Új játék indításakor' futó algoritmus, amely létrehozza a 2D-s játékteret és véletlenszerűen elhelyezi a mezőkön a nyersanyagokat.
+  </li>
+
+  <li>
+    <b>REST API</b> – Szabványos, webalapú kommunikációs felület, amelyen keresztül a böngésző kliens lekérdezéseket küldhet a játékszervernek.
+  </li>
+
+  <li>
+    <b>Royalty-free</b> – Jogdíjmentes tartalom, amely biztosítja a letöltött grafikai elemek szabad felhasználhatóságát a projektben.
+  </li>
+
+  <li>
+    <b>Singleplayer</b> – Olyan játékmód, ahol egyetlen emberi játékos méri össze a tudását a gép ellen, többjátékos (multiplayer) opció nélkül.
+  </li>
+
+  <li>
+    <b>Sprite</b> – A játék vizuális megjelenítéséhez használt kétdimenziós (2D) grafikai objektum.
+  </li>
+
+  <li>
+    <b>Szoftverkövetelmény-specifikáció (SRS)</b> – A készítendő szoftver funkcióit, interfészeit és korlátait részletező dokumentum.
+  </li>
+
+  <li>
+    <b>Szűk keresztmetszet / Bottleneck</b> – A szoftver azon része, amely lelassíthatja a rendszer teljesítményét.
+  </li>
+
+  <li>
+    <b>Technológiai fa</b> – A játékban elérhető fejlesztések és kutatások hierarchikus rendszere, ahol a Játékos új épületeket és fejlesztéseket oldhat fel nyersanyagok elköltésével.
+  </li>
+
+  <li>
+    <b>UML</b> – A rendszer felépítésének, folyamatainak és működésének ábrás bemutatására szolgáló jelölésrendszer.
+  </li>
+
+  <li>
+    <b>Use-case</b> – A szoftver egy funkciója vagy munkafolyamata (például 'Regisztráció', 'Új épület felhúzása' vagy 'Kör befejezése').
+  </li>
+
+  <li>
+    <b>Útvonalkeresés</b> –Egy algoritmus ami megnéézi, hogy egy harci egység milyen útvonalon juthat el a céljához az akadályok kikerülésével.
+  </li>
+
+  <li>
+    <b>Validáció</b> – A háttérrendszer ellenőrző folyamata, amellyel megvizsgálja, hogy a felhasználó által bevitt adatok megfelelnek-e a biztonsági és logikai követelményeknek.
+  </li>
+
+  <li>
+    <b>Vizuális visszajelzés</b> – A játékfelület azonnali grafikus reakciója a játékos cselekedeteire, mondjuk ha elfogy a nyersanyag egy funkcio gombja szürke lesz tehát nem használható stb...
   </li>
 
 </ul>
