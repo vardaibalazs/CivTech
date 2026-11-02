@@ -96,7 +96,7 @@
 </table>
 
 <br>
-<p class="right">2026.10.07</p>
+<p class="right">2026.11.05</p>
 
 <h2>Tartalomjegyzék</h2>
 
@@ -168,7 +168,46 @@
 
 <p style="text-align: justify;"><b>Pálya és nyersanyagok generálása:</b> A háttérrendszer (Szerver) algoritmusai alapján felépül a 2D-s térkép, és elhelyezésre kerülnek rajta a különböző nyersanyagok.</p>
 
-<h3 style="text-align: justify;">3.3.3 Gazdaság és Építkezés</h3>
+<h3 style="text-align: justify;">3.3.3 Pálya generálása, pálya elemek</h3>
+
+<p style="text-align: justify;"><b>Pálya elemek:</b> Ideiglenes elemek</p>
+
+<table>
+  <tr>
+    <td>Erdő:</td>
+    <td>Mező</td>
+    <td>Sivatag</td>
+    <td>Víz</td>
+    <td>Hegy</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+  </tr>
+  <tr>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+  </tr>
+  <tr>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+    <td>GEBP</td>
+  </tr>
+</table>
+
+<h3 style="text-align: justify;">3.3.4 Gazdaság és Építkezés</h3>
 
 <p style="text-align: justify;"><b>Nyersanyagok begyűjtése:</b> A játékos a körök során gyarapítja a nyersanyagkészletét a birtokolt területek és épületek alapján.</p>
 
@@ -178,7 +217,7 @@
 
 <p style="text-align: justify;"><b>Nyersanyag-költség levonása:</b> Belső rendszerfolyamat, amely ellenőrzi, hogy rendelkezésre áll-e a megfelelő mennyiségű nyersanyag, és ha igen, levonja azt a játékos készletéből.</p>
 
-<h3 style="text-align: justify;">3.3.4 Katonaság és Harc</h3>
+<h3 style="text-align: justify;">3.3.5 Katonaság és Harc</h3>
 
 <p style="text-align: justify;"><b>Katonai egység toborzása:</b> A játékos új egységeket hoz létre a hadseregébe. Kötelezően (include) meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
 
@@ -188,13 +227,13 @@
 
 <p style="text-align: justify;"><b>Sebzés és veszteség számítása:</b> A rendszer kiszámítja a harc kimenetelét az egységek statisztikái alapján, és levonja a megfelelő életerő-pontokat.</p>
 
-<h3 style="text-align: justify;">3.3.5 Technológia és Fejlődés</h3>
+<h3 style="text-align: justify;">3.3.6 Technológia és Fejlődés</h3>
 
 <p style="text-align: justify;"><b>Fejlesztési fa megtekintése:</b> A játékos megnyitja és böngészi a technológiai fát.</p>
 
 <p style="text-align: justify;"><b>Új technológia kutatása:</b> A játékos kiválaszt egy kutatandó technológiát. Ez kötelezően (include) meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
 
-<h3 style="text-align: justify;">3.3.6 Körkezelés és Győzelem</h3>
+<h3 style="text-align: justify;">3.3.7 Körkezelés és Győzelem</h3>
 
 <p style="text-align: justify;"><b>Kör befejezése:</b> A játékos átadja az irányítást. A funkció egymás után kötelezően (include) meghívja a <i>Nyersanyagok begyűjtése</i>, az <i>AI lépések kiszámítása és végrehajtása</i>, valamint a <i>Győzelmi feltételek ellenőrzése</i> alfolyamatokat.</p>
 
@@ -204,7 +243,7 @@
 
 <p style="text-align: justify;"><b>Katonai, Gazdasági és Technológiai győzelem kiértékelése:</b> Specifikus ellenőrző folyamatok, amelyek megvizsgálják az adott győzelmi kategória kritériumainak teljesülését.</p>
 
-<h3 style="text-align: justify;">3.3.7 Adminisztrátori Funkciók</h3>
+<h3 style="text-align: justify;">3.3.8 Adminisztrátori Funkciók</h3>
 
 <p style="text-align: justify;"><b>Játékmechanikai értékek módosítása:</b> Az adminisztrátor (Fejlesztő) a háttérből bele tud nyúlni a játékegyensúlyba (pl. egységek ereje, épületek ára).</p>
 
