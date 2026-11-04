@@ -158,15 +158,15 @@
 
 <h3 style="text-align: justify;">3.3.2 Játék Munkamenet és Kezelés</h3>
 
-<p style="text-align: justify;"><b>Új játék indítása:</b> A játékos elindít egy új mérkőzést. A funkció kötelezően (include) meghívja a <i>Pálya és nyersanyagok generálása</i> folyamatot. Ezt a funkciót kiterjesztheti (extend) a <i>Játékparaméterek beállítása</i>, ha a játékos egyedi beállításokat szeretne használni.</p>
+<p style="text-align: justify;"><b>Új játék indítása:</b> A játékos a főmenüből elindít egy új mérkőzést. A funkció kötelezően meghívja a Pálya és nyersanyagok generálása folyamatot a szerveren. Ezt a funkciót kiterjesztheti a Játékparaméterek beállítása, ha a játékos egyedi szabályrendszert szeretne alkalmazni.</p>
 
-<p style="text-align: justify;"><b>Játékparaméterek beállítása:</b> A játékos módosíthatja a kezdőfeltételeket (pl. térkép mérete, AI ellenfelek száma). Opcionális (extend) lépés az új játék indítása előtt.</p>
+<p style="text-align: justify;"><b>Játékparaméterek beállítása:</b> A mérkőzés előtt a játékos kiválaszthatja a kezdő frakcióját, lehet esetleg sivatagi nép, dzsungelharcosok, vagy normál szárazföldi civilizáció is. Módosíthatja a térkép méretét, az AI ellenfelek számát és nehézségi szintjét, valamint a nyersanyagok kitermelési sebességét. Eztt egy új játék indítása előtt egy JSON objektumba építi fel a játék, amit a kliens továbbít a backendnek.</p>
 
-<p style="text-align: justify;"><b>Játékállapot elmentése:</b> A játékos aktuális mérkőzésének adatbázisba történő lementése, amit a Szerver hajt végre.</p>
+<p style="text-align: justify;"><b>Játékállapot elmentése:</b> A mérkőzés lementése csak akkor lehetséges, ha a játékos a megfelelő kritériumoknak eleget tesz, például nincs aktív harcban stb... Ha a feltételek teljesülnek akkor a mentés gomb elérheővé válik a játékos számára és lementheti az adott mérkőzést. A kliens mentés esetén összegyűjti az összes entitás (épületek, egységek, nyersanyagok, technológiai fa) aktuális állapotát, és egy REST API híváson keresztül elküldi a Szervernek. A szerver pedig ha megkapja akkor egy adatbázisrendszerben, SQL ben eltárolja a mentés pontos adatait.</p>
 
-<p style="text-align: justify;"><b>Játékállapot betöltése:</b> Egy korábban elmentett mérkőzés adatainak lekérdezése az adatbázisból, és a játéktér visszaállítása.</p>
+<p style="text-align: justify;"><b>Játékállapot betöltése:</b> Egy korábban elmentett mérkőzés visszatöltése. A kliens lekéri az adatbázisból a mentett adatokat, majd a frontend újra felépíti és kirajzolja a játékteret, a nyersanyagokat és az egységeket pontosan abba az állapotba amelyben azokat elmentettük. A játék csak 1 mentést tárol el minden meccshez így nincs lehetőség 1 mentésnél korábbi mentéseket visszatölteni.</p>
 
-<p style="text-align: justify;"><b>Pálya és nyersanyagok generálása:</b> A háttérrendszer (Szerver) algoritmusai alapján felépül a 2D-s térkép, és elhelyezésre kerülnek rajta a különböző nyersanyagok.</p>
+<p style="text-align: justify;"><b>Pálya és nyersanyagok generálása:</b> A szerver algoritmusai felépítik a 2D-s térképet a megadott settingsek (kicsi/közepes/nagy) és a cellák százalékos eloszlási szabályai alapján. A rendszer véletlenszerűen, de a pályagenerálási szabályok betartásával helyezi el a nyersanyagokat. A generálás során érvényesülnek a frakció specifikus bónuszok: a játékos kezdő egységei olyan felszereléssel és képességekkel indulnak, amivel a saját terepükön sokkal hatékonyabban tudják kitermelni az ottani nyersanyagokat, míg az idegen terepen csak alap normál szinten. Például a sivatagi egység a sivatagban, a szárazföldi egység a mezőn, a dzsungel harcos egységek pedig a dzsungelekben kapják meg ezeket a bónuszokat. </p>
 
 <h3>3.3.3 Pálya generálása, pálya elemek</h3>
 
@@ -271,15 +271,21 @@ width="100px" height="100px"
 <li><b>Vízesés:</b> Extra fejlesztési sebességet ad vagy ki lehet termelni egy feljlesztés azonna megszerzésére.</li>
 <li><b>Éden kert:</b> Extra kereskedelmet ad vagy ki lehet termelni rengeteg élelemért.</li>
 
-<h3 style="text-align: justify;">3.3.4 Gazdaság és Építkezés</h3>
+<h3 style="text-align: justify;">3.3.4 Gazdaság, Építkezés és Kereskedelem</h3>
 
-<p style="text-align: justify;"><b>Nyersanyagok begyűjtése:</b> A játékos a körök során gyarapítja a nyersanyagkészletét a birtokolt területek és épületek alapján.</p>
+<p style="text-align: justify;"><b>Nyersanyagok begyűjtése:</b> A játékos a körök során gyarapítja a nyersanyagkészletét. A begyűjtés sebességét befolyásolja a választott frakció is.Pédául a saját biomjukon lévő nyersanyagokat a frakció egységei és épületei nagyobb hatásfokkal és gyorsabban termelik ki, mint az idegen területeken lévőket.</p>
 
-<p style="text-align: justify;"><b>Új épület felhúzása:</b> A játékos kijelöl egy épületet és elhelyezi a térképen. A művelet kötelezően (include) meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
+<p style="text-align: justify;"><b>Új épület felhúzása:</b> A játékos kijelöl egy épületet, és elhelyezi a térképen. A művelet kötelezően meghívja a nyersanyag költség levonása funkciót. Ha érvényesül a frakcióbónusz is akkor a saját civilizációhoz tartozó specifikus épületeket a játékos azonnal 2-es szinten tudja felhúzni, míg az általános vagy idegen biomhoz tartozó épületek csak 1-es szintről indítják.</p>
 
-<p style="text-align: justify;"><b>Épület fejlesztése:</b> Egy már meglévő épület szintjének növelése. Szintén kötelezően meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
+<p style="text-align: justify;"><b>Épület fejlesztése:</b> Egy meglévő épület kapacitásának vagy termelésének növelése, maximálisan tízes szintig húzható fel. Minden szintlépés adott mennyiségű nyersanyagba kerül, cserébe az épület több egységet tud befogadni, vagy több nyersanyagot állít elő körönként. A fejlesztés is kötelezően meghívja a nyersanyag költség levonása funkciót.</p>
 
-<p style="text-align: justify;"><b>Nyersanyag-költség levonása:</b> Belső rendszerfolyamat, amely ellenőrzi, hogy rendelkezésre áll-e a megfelelő mennyiségű nyersanyag, és ha igen, levonja azt a játékos készletéből.</p>
+<p style="text-align: justify;"><b>Nyersanyag-költség levonása:</b> Belső szerveroldali folyamat, ami ellenőrzi, hogy rendelkezésre áll-e a fejlesztéshez vagy építéshez elegendő mennyiségű nyersanyag. Ha minden feltétel teljesül akkor levonja a megfelelő mennyiségű nyersanyagot a játékos készletéből, ellenkező esetben hibaüzenetet ad a játékosnak és megakadályozza a tranzakciót.</p>
+
+<p style="text-align: justify;"><b>Kereskedelmi felület megnyitása:</b> A játékos megnyithatja a diplomácia és kereskedelem ablakot, feltéve, hogy a városában már felépített egy piac vagy egy kereskedőház épületet. Itt láthatja a felfedezett AI ellenfeleket, településeket, valamint a saját nyersanyag feleslegét és túltermelését.</p>
+
+<p style="text-align: justify;"><b>Nyersanyagok cseréje:</b> A játékos csereajánlatot tehet az AI ellenfélnek (például felkínál valamennyi fát valamennyi vasért cserébe). A tranzakció lebonyolításához a nemesfémet pénznemként használják. A sikeres üzletkötés automatikusan meghívja a nyersanyag költség levonása funkciót a kiadott árukra, majd azonnal jóváírja a kapott nyersanyagokat a játékos készletében.</p>
+
+<p style="text-align: justify;"><b>AI kereskedelmi hajlandóságának kiszámítása:</b> A szerver egy algoritmus segítségével értékeli ki a játékos által ajánlott üzletet. A gép megvizsgálja a saját aktuális nyersanyag készletét hogy kell e neki valamilyen nyersanyag, valamint a játékossal ápolt diplomáciai viszonyát (barátságos, semleges vagy ellenséges). Ha az AI-nak nagyon nagy szüksége van a felkínált anyagra, akkor szinte rögtön elfogadja az üzletet, ha nem akkor elutasíthatja a cserét vagy extra nemesfémet követel a csere mellé.</p>
 
 <h3 style="text-align: justify;">3.3.5 Katonaság és Harc</h3>
 
