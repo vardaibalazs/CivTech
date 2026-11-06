@@ -134,28 +134,81 @@
 
 <h2 style="text-align: justify;">3.2 Szereplők (Aktorok) leírása</h2>
 
-<p style="text-align: justify;"><b>Játékos / Látogató (Player):</b> A rendszer elsődleges felhasználója, aki a böngészőn keresztül lép interakcióba a játékkal. Ő indítja el a regisztrációs és bejelentkezési folyamatokat, valamint a játékmenet során a legtöbb funkciót (építés, mozgás, toborzás, kutatás, kör befejezése) is ő vezérli.</p>
+<h3 style="text-align: justify;">Játékos / Látogató (Player)</h3>
+<p style="text-align: justify;">A rendszer elsődleges felhasználója, aki a böngészőn keresztül lép interakcióba a játékkal. Ő indítja el a regisztrációs és bejelentkezési folyamatokat, valamint a játékmenet során a legtöbb funkciót (építés, mozgás, toborzás, kutatás, kör befejezése) is ő vezérli.</p>
+<ul style="text-align: justify;">
+    <li><b>Interakciós felület:</b> A Játékos kizárólag a webes grafikus felületen (GUI) keresztül érintkezik a rendszerrel. Számára a háttérfolyamatok (pl. az adatbázis lekérdezései) teljesen láthatatlanok.</li>
+    <li><b>Jogosultságok:</b> Csak és kizárólag a saját adataihoz, a saját aktuális játékállapotához, és a saját mentéseihez férhet hozzá. Semmilyen formában nem módosíthatja más játékosok adatait, és nem nyúlhat bele a játék globális szabályaiba.</li>
+    <li><b>Eszközigény:</b> A Játékosnak egy stabil internetkapcsolattal rendelkező, asztali számítógépre (egérrel és billentyűzettel) és egy modern böngészőre van szüksége a játék maradéktalan élvezetéhez.</li>
+</ul>
 
-<p style="text-align: justify;"><b>Fejlesztő / Admin (Admin):</b> A fejlesztőcsapat tagja, aki különleges jogosultságokkal rendelkezik. Az ő feladata a játékegyensúly (balance) karbantartása, a szerveroldali mentések kezelése, valamint a felhasználói fiókok adminisztrációja (pl. tiltás, törlés).</p>
+<h3 style="text-align: justify;">Fejlesztő / Admin</h3>
+<p style="text-align: justify;">A fejlesztőcsapat tagja, aki különleges jogosultságokkal rendelkezik. Az ő feladata a balance karbantartása, a szerveroldali mentések kezelése, valamint a felhasználói fiókok adminisztrációja mint például tiltás vagy törlés.</p>
+<ul style="text-align: justify;">
+    <li><b>Rendszerfelügyelet:</b> Az Adminisztrátor felel a szerver állapotának ellenőrzéséért. Hozzáfér a log fájlokhoz, ezáltal azonosítani és orvosolni tudja a játékosoknál felmerülő fagyásokat vagy szerveroldali hibákat.</li>
+    <li><b>Adatbázis elérés:</b> Teljes olvasási és írási jogosultsággal rendelkezik a MySQL adatbázis felett. Törölhet sérült mentéseket, és inaktiválhat olyan fiókokat, amelyek valamilyen okból megsértik a szabályzatot.</li>
+    <li><b>Balance állítás:</b> Ő az a személy, aki egy külön felületen, vagy közvetlenül az adatbázis paraméterein keresztül módosíthatja például egy katonai egység támadóértékét, vagy egy épület felhúzásának költségeit, ha a tesztelés során valami túl erősnek bizonyul.</li>
+</ul>
 
-<p style="text-align: justify;"><b>AI Ellenfél (AI):</b> A mesterséges intelligencia, amely a gép által irányított játékosokat vezérli. Passzív szereplő mindaddig, amíg a játékos be nem fejezi a körét. Ekkor a saját logikája alapján kiszámítja és végrehajtja a lépéseit.</p>
+<h3 style="text-align: justify;">AI Ellenfél</h3>
+<p style="text-align: justify;">A mesterséges intelligencia, amely a gép által irányított játékosokat vezérli. Passzív szereplő mindaddig, amíg a játékos be nem fejezi a körét. Ekkor a saját logikája alapján kiszámítja és végrehajtja a lépéseit.</p>
+<ul style="text-align: justify;">
+    <li><b>Döntéshozatali mechanizmus:</b> Az AI a játékos lépései és a térképen látható erőforrások alapján prioritásokat állít fel (pl. terjeszkedés, védekezés, kutatás), majd egy súlyozott algoritmus alapján kiválasztja a számára legoptimálisabb cselekvést.</li>
+    <li><b>Erőforrás-gazdálkodás:</b> Ugyanazokkal a szabályokkal játszik, mint a Játékos. Nincsenek tisztességtelen előnyei (pl. nem lát át a "fog of war"-on, és nem kap ingyen nyersanyagot), a kihívást a logikai algoritmusának összetettsége adja.</li>
+    <li><b>Aktivitási ablak:</b> A szereplő kizárólag a "Kör befejezése" fázisban aktív. Lépéseit a szerver a háttérben azonnal (vagy egy kis, szimulált gondolkodási idővel) kiszámolja, majd a végeredményt elküldi a Játékos kliensének, aki már csak a változásokat látja a térképen.</li>
+</ul>
 
-<p style="text-align: justify;"><b>Szerver / Adatbázis (DB):</b> A háttérrendszer, amely az adatok tárolásáért és feldolgozásáért felel. Részt vesz a felhasználók hitelesítésében, a játékállapotok mentésében és betöltésében, a pályagenerálásban, valamint végrehajtja az adminisztrátori utasításokat.</p>
+<h3 style="text-align: justify;">Szerver / Adatbázis</h3>
+<p style="text-align: justify;">A háttérrendszer, amely az adatok tárolásáért és feldolgozásáért felel. Részt vesz a felhasználók hitelesítésében, a játékállapotok mentésében és betöltésében, a pályagenerálásban, valamint végrehajtja az adminisztrátori utasításokat.</p>
+<ul style="text-align: justify;">
+    <li><b>Adatbiztonság és perzisztencia:</b> Ez a rendszer felel azért, hogy a játékos jelszava titkosítva (hash) kerüljön mentésre, és hogy a többórás játékmenetek adatai egy esetleges áramszünet esetén se vesszenek el.</li>
+    <li><b>Matematikai motor:</b> Ez a komponens generálja le a kiindulási pályát seed alapján, és számolja ki a harcok végeredményét. Így a Játékos hiába próbálná a saját gépén, a böngészőből manipulálni a játékot, a valódi eredményt a Szerver hitelesíti.</li>
+    <li><b>Kommunikációs csomópont:</b> Kapcsolatot tart fenn a Játékos böngészője és az adatbázis között. Fogadja a játékos kéréseit, értelmezi azokat, és ha minden feltétel adott, módosítja az adatbázist, majd visszaigazolást küld.</li>
+</ul>
 
 <h2 style="text-align: justify;">3.3 Use-case-ek (Funkciók) részletes specifikációja</h2>
 
-<h3 style="text-align: justify;">3.3.1 Felhasználókezelés és Hitelesítés</h3>
+<h3 style="text-align: justify;">Felhasználókezelés és Hitelesítés</h3>
 
-<p style="text-align: justify;"><b>Regisztráció:</b> A látogató egy űrlapon megadja az adatait (felhasználónév, e-mail, jelszó) egy új fiók létrehozásához. A folyamat kötelezően meghívja az <i>Adatbázis hitelesítés és jogosultság ellenőrzés</i> funkciót az adatok validálására és mentésére.</p>
+<h4 style="text-align: justify;">Regisztráció</h4>
+<p style="text-align: justify;"><b>Cél és működés:</b> A látogató egy űrlapon megadja az adatait (felhasználónév, e-mail, jelszó) egy új fiók létrehozásához. A folyamat kötelezően meghívja az "Adatbázis hitelesítés és jogosultság ellenőrzés" funkciót az adatok validálására és mentésére.</p>
+<ul style="text-align: justify;">
+    <li><b>Validáció:</b> A rendszer már a böngésző oldalon ellenőrzi, hogy az e-mail cím megfelelő formátumú-e, és a jelszó elég erős-e (pl. minimum karakterek száma).</li>
+    <li><b>Ütközésvizsgálat:</b> A beküldéskor a szerver megnézi, hogy a választott felhasználónév vagy e-mail cím létezik-e már az adatbázisban. Ha igen, hibaüzenetet küld vissza.</li>
+    <li><b>Sikeres folyamat lezárása:</b> Ha minden adat helyes, a rendszer létrehozza az új felhasználói rekordot az adatbázisban, majd a látogatót egyből át is irányítja a Bejelentkezés képernyőre, vagy egyből be is lépteti.</li>
+</ul>
 
-<p style="text-align: justify;"><b>Bejelentkezés:</b> A játékos megadja a hitelesítő adatait a rendszerbe való belépéshez. A folyamat kötelezően (include) meghívja az <i>Adatbázis hitelesítés és jogosultság ellenőrzés</i> funkciót a jelszó és a felhasználónév ellenőrzésére.</p>
+<h4 style="text-align: justify;">Bejelentkezés</h4>
+<p style="text-align: justify;"><b>Cél és működés:</b> A játékos megadja a hitelesítő adatait a rendszerbe való belépéshez. A folyamat kötelezően meghívja az "Adatbázis hitelesítés és jogosultság ellenőrzés" funkciót a jelszó és a felhasználónév ellenőrzésére.</p>
+<ul style="text-align: justify;">
+    <li><b>Session létrehozása:</b> Sikeres hitelesítés esetén a szerver egy egyedi, ideiglenes session ID tokent generál és küld a böngészőnek. Ezt a tokent a kliens eltárolja, így a játékosnak nem kell minden egyes kattintásnál újra megadnia a jelszavát.</li>
+    <li><b>Hibakezelés:</b> Helytelen felhasználónév vagy jelszó megadása esetén a rendszer egy általános hibaüzenetet küld ("Hibás e-mail vagy jelszó!"), anélkül, hogy elárulná, pontosan melyikkel volt a probléma. Ennek biztonsági okai vannak.</li>
+    <li><b>Profil betöltése:</b> Belépés után a rendszer automatikusan betölti az adatbázisból a játékos profilját, beállításait, statisztikáit, és lekéri a korábbi, mentett játékainak listáját.</li>
+</ul>
 
-<p style="text-align: justify;"><b>Kijelentkezés:</b> A játékos megszakítja az aktív munkamenetét, és visszatér a kezdőképernyőre.</p>
+<h4 style="text-align: justify;">Kijelentkezés</h4>
+<p style="text-align: justify;"><b>Cél és működés:</b> A játékos megszakítja az aktív munkamenetét, és visszatér a kezdőképernyőre.</p>
+<ul style="text-align: justify;">
+    <li><b>Token törlése kliensoldalon:</b> A böngésző azonnal törli a korábban kapott ideiglenes hitelesítési tokent, így a böngésző bezárása vagy a Vissza gomb megnyomása után sem lehet újra belépni jelszó nélkül.</li>
+    <li><b>Szerveroldali lezárás:</b> A kliens egy kérést küld a szervernek, hogy inaktiválja az adott munkamenetet, ezzel megakadályozva, hogy valaki ellopja az aktív tokent.</li>
+    <li><b>Biztonsági mentés (opcionális):</b> Kilépés előtt a rendszer rákérdezhet, hogy a játékos el szeretné-e menteni a folyamatban lévő, de még el nem mentett játékállapotát.</li>
+</ul>
 
-<p style="text-align: justify;"><b>Jelszó visszaállítása / módosítása:</b> A játékos új jelszót állíthat be az elfelejtett vagy lecserélni kívánt jelszava helyett. Ez szintén kötelezően meghívja az <i>Adatbázis hitelesítés és jogosultság ellenőrzés</i> funkciót.</p>
+<h4 style="text-align: justify;">Jelszó visszaállítása / módosítása</h4>
+<p style="text-align: justify;"><b>Cél és működés:</b> A játékos új jelszót állíthat be az elfelejtett vagy lecserélni kívánt jelszava helyett. Ez szintén kötelezően meghívja az "Adatbázis hitelesítés és jogosultság ellenőrzés" funkciót.</p>
+<ul style="text-align: justify;">
+    <li><b>Azonosítás e-maillel:</b> A játékos megadja az e-mail címét, amire (ha az szerepel az adatbázisban) a rendszer egy egyedi, időkorlátos jelszó-visszaállító linket küld.</li>
+    <li><b>Új jelszó megadása:</b> A linkre kattintva a játékos a böngészőben kétszer az elgépelés elkerülése végett megadja az új jelszavát.</li>
+    <li><b>Adatbázis frissítése:</b> A szerver az új jelszót ismételten titkosítja, felülírja a régit az adatbázisban, majd a korábbi, esetlegesen nyitva maradt munkameneteket biztonsági okokból megszakítja.</li>
+</ul>
 
-<p style="text-align: justify;"><b>Adatbázis hitelesítés és jogosultság ellenőrzés:</b> Belső, szerveroldali folyamat, amely a jelszavak hash-elését, az adatok egyezésének vizsgálatát és a jogosultsági szintek lekérdezését végzi az adatbázisból.</p>
-
+<h4 style="text-align: justify;">Adatbázis hitelesítés és jogosultság ellenőrzés</h4>
+<p style="text-align: justify;"><b>Cél és működés:</b> Belső, szerveroldali folyamat, amely a jelszavak hash-elését, az adatok egyezésének vizsgálatát és a jogosultsági szintek lekérdezését végzi az adatbázisból.</p>
+<ul style="text-align: justify;">
+    <li><b>Titkosítás:</b> A nyílt szövegű jelszavakat soha nem tárolunk az adatbázisban. Bejelentkezéskor és regisztrációkor is egy biztonságos hash algoritmus (pl. bcrypt) dolgozza fel azokat, és a rendszer csak a hash-eket hasonlítja össze.</li>
+    <li><b>Jogosultsági szintek:</b> Ez a funkció ellenőrzi, hogy a próbálkozó felhasználó sima Játékos, esetleg speciális jogokkal rendelkező Admin. Ez alapján dönti el, hogy milyen felületeket és adatokat küld vissza a frontendnek.</li>
+    <li><b>Brute-force elleni védelem:</b> Ha az adott felhasználónévhez vagy IP-címhez túl sokszor próbálnak meg belépni hibás jelszóval rövid időn belül, ez az alrendszer ideiglenesen letilthatja a próbálkozásokat.</li>
+</ul>
 <h3 style="text-align: justify;">3.3.2 Játék Munkamenet és Kezelés</h3>
 
 <p style="text-align: justify;"><b>Új játék indítása:</b> A játékos a főmenüből elindít egy új mérkőzést. A funkció kötelezően meghívja a Pálya és nyersanyagok generálása folyamatot a szerveren. Ezt a funkciót kiterjesztheti a Játékparaméterek beállítása, ha a játékos egyedi szabályrendszert szeretne alkalmazni.</p>
