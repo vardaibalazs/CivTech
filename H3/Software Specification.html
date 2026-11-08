@@ -11,6 +11,25 @@
     html {
         background-color: #e0e0e0;
     }
+.icon {
+    width: 92.5px;
+    height: 102.5px;
+    background-image: url("icons.png");
+    background-repeat: no-repeat;
+    background-size: 384px 256px;
+}
+.barbar {
+    background-position: -10px -72.5px;
+}
+.felderito {
+    background-position: -92px -72px;
+}
+.telepes {
+    background-position: -191px -72.5px;
+}
+.ijász {
+    background-position: -290px -72.5px;
+}
     body {
         max-width: 21cm; 
         margin: 2cm auto; 
@@ -345,25 +364,117 @@ width="100px" height="100px"
 
 <h3 style="text-align: justify;">3.3.5 Katonaság és Harc</h3>
 
-<p style="text-align: justify;"><b>Katonai egység toborzása:</b> A játékos új egységeket hoz létre a hadseregébe. Kötelezően (include) meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
+<p style="text-align: justify;">
+  <b>Katonai egység toborzása:</b>
+  A játékosnak lehetősége van új katonai egységeket létrehozni és ezáltal növelni a hadserege létszámát. A toborzás során először ki kell választania a kívánt egységtípust, majd a rendszer ellenőrzi, hogy a játékos rendelkezik-e az adott egység létrehozásához szükséges nyersanyagokkal és megfelelő épülettel. Amennyiben a feltételek teljesülnek, a rendszer levonja a szükséges erőforrásokat, és létrehozza az új egységet. A művelet kötelezően (include) meghívja a Nyersanyag-költség levonása funkciót.
+</p>
 
-<p style="text-align: justify;"><b>Egység mozgatása:</b> A játékos egy kiválasztott egységet egy új mezőre irányít. Ha az adott mezőn ellenséges egység tartózkodik, a mozgás kiterjesztődik (extend) az <i>Ellenség/Bázis megtámadása</i> funkcióra.</p>
+<p style="text-align: justify;">
+  <b>Egység mozgatása:</b>
+  A játékos kiválaszthatja a saját hadseregének valamelyik egységét, majd megadhatja azt a térképen található mezőt, amelyre az egységet mozgatni szeretné. A rendszer ellenőrzi, hogy az adott egység rendelkezik-e elegendő mozgásponttal, valamint hogy a célmező elérhető-e és nem akadályozza-e valamilyen tereptárgy vagy másik egység. Az egyes egységtípusok eltérő mozgási tulajdonságokkal rendelkezhetnek: például a lovasság gyorsabban haladhat sík terepen, míg a gyalogság lassabban mozoghat hegyvidéki területeken. Ha a célmezőn ellenséges egység tartózkodik, a mozgási művelet kiterjesztődik (extend) az Ellenség/Bázis megtámadása funkcióra. Ebben az esetben a rendszer harci helyzetet kezdeményez, és a két szemben álló fél katonai értékei alapján határozza meg a harc lehetséges kimenetelét.
+</p>
 
-<p style="text-align: justify;"><b>Ellenség/Bázis megtámadása:</b> Harci interakció az ellenféllel. Kötelezően (include) meghívja a <i>Sebzés és veszteség számítása</i> alfolyamatot.</p>
+<p style="text-align: justify;">
+  <b>Ellenség/Bázis megtámadása:</b>
+  A játékos lehetőséget kap arra, hogy megtámadja az ellenfél katonai egységeit, épületeit vagy településeit. A támadás kezdeményezésekor a rendszer megvizsgálja a támadó és a védekező fél tulajdonságait, például a támadási erőt, a védelmi értéket, az aktuális életerőt, valamint az esetleges terep- és technológiai bónuszokat. A támadás eredménye ezek figyelembevételével kerül meghatározásra. A funkció kötelezően (include) meghívja a Sebzés és veszteség számítása alfolyamatot, amely kiszámítja a harc során elszenvedett veszteségeket.
+</p>
 
-<p style="text-align: justify;"><b>Sebzés és veszteség számítása:</b> A rendszer kiszámítja a harc kimenetelét az egységek statisztikái alapján, és levonja a megfelelő életerő-pontokat.</p>
+<p style="text-align: justify;">
+  <b>Sebzés és veszteség számítása:</b>
+  A rendszer a harc során kiszámítja az egyes résztvevő egységek által elszenvedett sebzést. A számítás során figyelembe veszi a támadó egység támadási értékét, a védekező egység védelmi értékét, az egységek aktuális életerejét, a terepviszonyokat, valamint az esetlegesen megszerzett technológiai fejlesztéseket. Az így meghatározott sebzés levonásra kerül az érintett egységek életerő-pontjaiból. Amennyiben egy egység életereje nullára csökken, a rendszer eltávolítja azt a térképről, és a játékos elveszíti az adott katonai egységet. Ha egy bázis vagy város védelme teljesen megszűnik, lehetőség nyílhat annak elfoglalására.
+</p>
+
+<p><b>Példa egységek ikonjaik és tulajdonságaik:</b></p>
+<table>
+<tr>
+  <td>Barbár</td>
+  <td>Felderítő</td>
+  <td>Telepes</td>
+  <td>Ijjász</td>
+</tr>
+<tr>
+    <td><div class="icon barbar"></div></td>
+    <td><div class="icon felderito"></div></td>
+    <td><div class="icon telepes"></div></td>
+    <td><div class="icon ijász"></div></td>
+</tr>
+<tr>
+  <td>
+    Életerő: 100
+    Sebzés: 30-40
+    Mozgási pont: 3
+    Speciális: Nincs
+  </td>
+  <td>
+    Életerő: 150
+    Sebzés: 10
+    Mozgási pont: 5
+    Speciális: Nincs
+  </td>
+    <td>
+    Életerő: 100
+    Sebzés: 0
+    Mozgási pont: 3
+    Speciális: Város alapítás
+  </td>
+    <td>
+    Életerő: 120
+    Sebzés: 50-60
+    Mozgási pont: 3 
+    Speciális: Távolsági sebzés
+  </td>
+</tr>
+</table>
 
 <h3 style="text-align: justify;">3.3.6 Technológia és Fejlődés</h3>
 
 <p style="text-align: justify;">
-  <b>A technológiai fejlesztés menete</b>
-  A fejlesztési fa több technológiai korra van osztva, ókor, középkor, reneszánsz, ipari forradalom, új kor.
-  Minden különböző korban, más tipusú katonai egységek és különböző fejlesztések, épületek érhetőek el.
+  <b>A technológiai fejlesztés menete:</b>
+  A játék technológiai fejlődési rendszere egy több korszakra felosztott fejlesztési fára épül. A játékos kutatások elvégzésével új technológiákat, katonai egységeket, épületeket és egyéb játékmeneti lehetőségeket oldhat fel. A technológiai fejlődés célja, hogy a játékos birodalma fokozatosan fejlődjön, és az egyes korszakok során egyre fejlettebb gazdasági, katonai és tudományos lehetőségekhez jusson.
+  A fejlesztési fa öt fő technológiai korszakra oszlik: ókor, középkor, reneszánsz, ipari forradalom és a technológiai kor. Minden korszak saját technológiai követelményekkel, kutatási lehetőségekkel, épületekkel és katonai egységekkel rendelkezik. Egy új korszak eléréséhez a játékosnak meghatározott technológiákat kell kifejlesztenie, valamint teljesítenie kell az adott korszak továbblépési feltételeit.
+  Az új technológiai korszakok elérése nemcsak új kutatásokat, hanem jelentős játékmeneti változásokat is eredményez: például új katonai egységek jelennek meg, fejlettebb épületek építhetők, és a gazdasági termelés hatékonysága is növelhető.
 </p>
 
-<p style="text-align: justify;"><b>Fejlesztési fa megtekintése:</b> A játékos megnyitja és böngészi a technológiai fát.</p>
+<p style="text-align: justify;">
+  <b>Fejlesztési fa megtekintése:</b>
+  A játékos megnyithatja a technológiai fejlesztési fát, amely áttekinthető formában jeleníti meg az összes elérhető, már kifejlesztett és még zárolt technológiát. Az egyes technológiákhoz a rendszer megjeleníti azok nevét, leírását, kutatási költségét, előfeltételeit és az általuk biztosított új lehetőségeket.
+  A már kifejlesztett technológiák teljesített állapotban jelennek meg, míg a még nem elérhető fejlesztések zárolt állapotban láthatók. A játékos így könnyen megtervezheti a fejlődési útvonalát, és eldöntheti, hogy melyik technológia kutatása szolgálja leginkább a birodalma érdekeit.
+</p>
 
-<p style="text-align: justify;"><b>Új technológia kutatása:</b> A játékos kiválaszt egy kutatandó technológiát. Ez kötelezően (include) meghívja a <i>Nyersanyag-költség levonása</i> funkciót.</p>
+<p style="text-align: justify;">
+  <b>Új technológia kutatása:</b>
+  A játékos a fejlesztési fából kiválaszthat egy olyan technológiát, amelynek előfeltételeit már teljesítette, és amelynek kutatási költségét képes kifizetni. A rendszer ellenőrzi a technológia megszerzéséhez szükséges feltételeket, beleértve a korábban kifejlesztett technológiákat, a rendelkezésre álló tudományos pontokat és az egyéb szükséges nyersanyagokat.
+  Amennyiben minden feltétel teljesül, a játékos megkezdheti a kutatást. A művelet kötelezően (include) meghívja a Nyersanyag-költség levonása funkciót, amely levonja a kutatáshoz szükséges erőforrásokat. A kutatás befejezését követően a rendszer feloldja az adott technológiát, és elérhetővé teszi annak játékmeneti előnyeit.
+</p>
+
+<p><b>Példa technológiai fejlesztések:</b></p>
+<table>
+<tr>
+  <td><b>Ókor:</b></td>
+  <td><b>Agrikultúra: </b>Farmok létrehozásának a lehetősége a mező cellákban.</td>
+  <td><b>Pitagoraszi elmélet: </b>Egységek átlós mozgása a cellák között.</td>
+</tr>
+<tr>
+  <td><b>Középkor:</b></td>
+  <td><b>Hajó építés: </b>Egységek a víz cellákon áthaladhatnak:</td>
+  <td><b>Domesztikálás: </b>Lovas egységek kifejlesztése.</td>
+</tr>
+<tr>
+  <td><b>Reneszánsz:</b></td>
+  <td><b>Lőpor: </b>Ágyúk és muskétások kifejlesztése.</td>
+  <td><b>Céhek: </b>A városokban fejleszthető épületek növelik a termelést.</td>
+</tr>
+<tr>
+  <td><b>Ipari forradalom: </b></td>
+  <td><b>Gőzgép: </b>A bányászat fejleszése, vonatok készítése.</td>
+  <td><b>Gyárak: </b>A városokban létrehozható gyárak növelik a termelést.</td>
+</tr>
+<tr>
+  <td><b>Technológiai kor: </b></td>
+  <td><b>Internet: </b>Kereskedelem, kommunikáció fejlesztése.</td>
+  <td><b>Atom technológia: </b>Atomtengeralattjárók, atombombák és atomenergia kifejlesztése.</td>
+</tr>
+</table>
 
 <h3 style="text-align: justify;">3.3.7 Körkezelés és Győzelem</h3>
 
