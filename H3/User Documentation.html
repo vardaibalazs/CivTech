@@ -30,16 +30,10 @@
     .spacer { height: 1.5cm; }
 
     table {
-        width: 100%;
         border-collapse: collapse;
-        margin-top: 15px;
-        margin-bottom: 15px;
     }
     th, td {
         border: 1px solid black;
-        padding: 8px;
-        vertical-align: top;
-        text-align: left;
     }
     th {
         background-color: #f9f9f9;
@@ -101,6 +95,50 @@
 <h2>Tartalomjegyzék</h2>
 
 <p><a href="#bevezetes">1. Bevezetés</a></p>
+<p><a href="#palyareszletei">2. Pálya részletei</a></p>
+<p><a href="#varoskezeles">3. Városok kezelése</a></p>
+<p><a href="#egysegkezeles">4. Egységek kezelése</a></p>
+<p><a href="#gyozelmifeltetel">5. Győzelmi feltételek</a></p>
+
+<h3 id="bevezetes" style="text-align: justify;">1. Bevezetés</h3>
+
+<h3 id="palyareszletei" style="text-align: justify;">2. Pálya részletei</h3>
+
+<img src="map big.png"  style="max-width: 100%; height: auto;">
+
+<h3 id="varoskezeles" style="text-align: justify;">3. Városok kezelése</h3>
+
+
+<table>
+  <tr>
+    <td style = "width: 80px; text-align: center; background-color: #2d963d""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>tree</title><path fill="currentColor" d="M17.5 7.525V7.5C17.5 4.465 15.035 2 12 2C9.7 2 7.68 3.415 6.875 5.515C4.23 5.28 2 7.395 2 10c0 1.635.87 3.11 2.265 3.905A4.253 4.253 0 0 0 8.5 18.5h2.75v2H10V22h4v-1.5h-1.25V13H16v-1.5h-3.25V8h-1.5v4.69l-2.47-2.47l-1.06 1.06l3.53 3.53V17H8.5a2.755 2.755 0 0 1-2.75-2.75c0-.2.025-.4.07-.61l.14-.62l-.59-.24A2.985 2.985 0 0 1 3.5 10c0-1.885 1.735-3.395 3.715-2.91l.73.18l.18-.725a3.986 3.986 0 0 1 3.88-3.04c2.205 0 4 1.795 4 4v1.5h1c1.93 0 3.5 1.57 3.5 3.5s-1.57 3.5-3.5 3.5h-3v1.5h3c2.755 0 5-2.245 5-5a5.003 5.003 0 0 0-4.5-4.975z"/></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #77d445""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>grass</title><path fill="currentColor" d="M2 20v-2h5.75q-.55-2.125-2.087-3.662T2 12.25q.5-.125.988-.187T4 12q3.35 0 5.675 2.325T12 20zm12 0q0-1.05-.225-2.087t-.65-1.988q1.05-1.775 2.863-2.85T20 12q.525 0 1.013.063t.987.187q-2.125.55-3.65 2.088T16.25 18H22v2zm-2-5.975q0-1.625.6-3.05t1.65-2.513t2.463-1.737t3.012-.7q-1.4.875-2.45 2.15t-1.625 2.85q-1.1.525-2.012 1.288T12 14.025m-1.825-1.875q-.3-.225-.6-.425t-.625-.4q0-.15.025-.312T9 10.7q0-1.9-.6-3.6T6.7 4q1.65.675 2.863 1.937t1.862 2.913q-.45.75-.775 1.588t-.475 1.712"/></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #dec34d""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>desert</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2.75 21.25v-3.5C5.5 15.5 8.25 14.5 11 14.5c4 0 6.5 2.5 10.25 3v3.75ZM15.5 15V8m0 4.5H14a1.25 1.25 0 0 1-1.25-1.25V10m2.75 1H17a1.25 1.25 0 0 0 1.25-1.25V9"/><circle cx="6.75" cy="7" r="2.75"/></g></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #083fd7"><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>water</title><path fill="currentColor" d="M2 18v-2q.95 0 1.413-.5T5.35 15t1.938.5t1.362.5q.95 0 1.413-.5T12 15q1.425 0 1.938.5t1.412.5q.95 0 1.388-.5t1.912-.5t1.938.5T22 16v2q-1.425 0-1.937-.5T18.65 17t-1.362.5t-1.938.5q-1.425 0-1.937-.5T12 17q-.95 0-1.412.5T8.65 18t-1.912-.5T5.35 17t-1.412.5T2 18m0-4v-2q.95 0 1.413-.5T5.35 11q1.425 0 1.913.5t1.387.5q.95 0 1.412-.5T12 11q1.425 0 1.925.5t1.375.5q.95 0 1.412-.5t1.938-.5q1.425 0 1.938.5T22 12v2q-1.475 0-1.963-.5T18.65 13t-1.362.5t-1.938.5q-1.425 0-1.937-.5T12 13q-.95 0-1.388.5T8.7 14t-1.962-.5T5.35 13t-1.412.5T2 14m0-4V8q.95 0 1.413-.5T5.35 7q1.425 0 1.913.5T8.65 8q.95 0 1.412-.5T12 7q1.425 0 1.925.5T15.3 8q.95 0 1.412-.5T18.65 7q1.425 0 1.938.5T22 8v2q-1.475 0-1.963-.5T18.65 9t-1.362.5t-1.938.5q-1.425 0-1.937-.5T12 9q-.95 0-1.388.5T8.7 10t-1.962-.5T5.35 9t-1.412.5T2 10"/></svg></td>
+  </tr>
+  <tr style = "height: 80px;">
+    <td style = "width: 80px; text-align: center; background-color: #2d963d""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>tree</title><path fill="currentColor" d="M17.5 7.525V7.5C17.5 4.465 15.035 2 12 2C9.7 2 7.68 3.415 6.875 5.515C4.23 5.28 2 7.395 2 10c0 1.635.87 3.11 2.265 3.905A4.253 4.253 0 0 0 8.5 18.5h2.75v2H10V22h4v-1.5h-1.25V13H16v-1.5h-3.25V8h-1.5v4.69l-2.47-2.47l-1.06 1.06l3.53 3.53V17H8.5a2.755 2.755 0 0 1-2.75-2.75c0-.2.025-.4.07-.61l.14-.62l-.59-.24A2.985 2.985 0 0 1 3.5 10c0-1.885 1.735-3.395 3.715-2.91l.73.18l.18-.725a3.986 3.986 0 0 1 3.88-3.04c2.205 0 4 1.795 4 4v1.5h1c1.93 0 3.5 1.57 3.5 3.5s-1.57 3.5-3.5 3.5h-3v1.5h3c2.755 0 5-2.245 5-5a5.003 5.003 0 0 0-4.5-4.975z"/></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #77d445""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>grass</title><path fill="currentColor" d="M2 20v-2h5.75q-.55-2.125-2.087-3.662T2 12.25q.5-.125.988-.187T4 12q3.35 0 5.675 2.325T12 20zm12 0q0-1.05-.225-2.087t-.65-1.988q1.05-1.775 2.863-2.85T20 12q.525 0 1.013.063t.987.187q-2.125.55-3.65 2.088T16.25 18H22v2zm-2-5.975q0-1.625.6-3.05t1.65-2.513t2.463-1.737t3.012-.7q-1.4.875-2.45 2.15t-1.625 2.85q-1.1.525-2.012 1.288T12 14.025m-1.825-1.875q-.3-.225-.6-.425t-.625-.4q0-.15.025-.312T9 10.7q0-1.9-.6-3.6T6.7 4q1.65.675 2.863 1.937t1.862 2.913q-.45.75-.775 1.588t-.475 1.712"/></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #dec34d""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>desert</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2.75 21.25v-3.5C5.5 15.5 8.25 14.5 11 14.5c4 0 6.5 2.5 10.25 3v3.75ZM15.5 15V8m0 4.5H14a1.25 1.25 0 0 1-1.25-1.25V10m2.75 1H17a1.25 1.25 0 0 0 1.25-1.25V9"/><circle cx="6.75" cy="7" r="2.75"/></g></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #083fd7"><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>water</title><path fill="currentColor" d="M2 18v-2q.95 0 1.413-.5T5.35 15t1.938.5t1.362.5q.95 0 1.413-.5T12 15q1.425 0 1.938.5t1.412.5q.95 0 1.388-.5t1.912-.5t1.938.5T22 16v2q-1.425 0-1.937-.5T18.65 17t-1.362.5t-1.938.5q-1.425 0-1.937-.5T12 17q-.95 0-1.412.5T8.65 18t-1.912-.5T5.35 17t-1.412.5T2 18m0-4v-2q.95 0 1.413-.5T5.35 11q1.425 0 1.913.5t1.387.5q.95 0 1.412-.5T12 11q1.425 0 1.925.5t1.375.5q.95 0 1.412-.5t1.938-.5q1.425 0 1.938.5T22 12v2q-1.475 0-1.963-.5T18.65 13t-1.362.5t-1.938.5q-1.425 0-1.937-.5T12 13q-.95 0-1.388.5T8.7 14t-1.962-.5T5.35 13t-1.412.5T2 14m0-4V8q.95 0 1.413-.5T5.35 7q1.425 0 1.913.5T8.65 8q.95 0 1.412-.5T12 7q1.425 0 1.925.5T15.3 8q.95 0 1.412-.5T18.65 7q1.425 0 1.938.5T22 8v2q-1.475 0-1.963-.5T18.65 9t-1.362.5t-1.938.5q-1.425 0-1.937-.5T12 9q-.95 0-1.388.5T8.7 10t-1.962-.5T5.35 9t-1.412.5T2 10"/></svg></td>
+  </tr>
+  <tr>
+    <td style = "width: 80px; text-align: center; background-color: #2d963d""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>tree</title><path fill="currentColor" d="M17.5 7.525V7.5C17.5 4.465 15.035 2 12 2C9.7 2 7.68 3.415 6.875 5.515C4.23 5.28 2 7.395 2 10c0 1.635.87 3.11 2.265 3.905A4.253 4.253 0 0 0 8.5 18.5h2.75v2H10V22h4v-1.5h-1.25V13H16v-1.5h-3.25V8h-1.5v4.69l-2.47-2.47l-1.06 1.06l3.53 3.53V17H8.5a2.755 2.755 0 0 1-2.75-2.75c0-.2.025-.4.07-.61l.14-.62l-.59-.24A2.985 2.985 0 0 1 3.5 10c0-1.885 1.735-3.395 3.715-2.91l.73.18l.18-.725a3.986 3.986 0 0 1 3.88-3.04c2.205 0 4 1.795 4 4v1.5h1c1.93 0 3.5 1.57 3.5 3.5s-1.57 3.5-3.5 3.5h-3v1.5h3c2.755 0 5-2.245 5-5a5.003 5.003 0 0 0-4.5-4.975z"/></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #77d445""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>grass</title><path fill="currentColor" d="M2 20v-2h5.75q-.55-2.125-2.087-3.662T2 12.25q.5-.125.988-.187T4 12q3.35 0 5.675 2.325T12 20zm12 0q0-1.05-.225-2.087t-.65-1.988q1.05-1.775 2.863-2.85T20 12q.525 0 1.013.063t.987.187q-2.125.55-3.65 2.088T16.25 18H22v2zm-2-5.975q0-1.625.6-3.05t1.65-2.513t2.463-1.737t3.012-.7q-1.4.875-2.45 2.15t-1.625 2.85q-1.1.525-2.012 1.288T12 14.025m-1.825-1.875q-.3-.225-.6-.425t-.625-.4q0-.15.025-.312T9 10.7q0-1.9-.6-3.6T6.7 4q1.65.675 2.863 1.937t1.862 2.913q-.45.75-.775 1.588t-.475 1.712"/></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #dec34d""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>desert</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2.75 21.25v-3.5C5.5 15.5 8.25 14.5 11 14.5c4 0 6.5 2.5 10.25 3v3.75ZM15.5 15V8m0 4.5H14a1.25 1.25 0 0 1-1.25-1.25V10m2.75 1H17a1.25 1.25 0 0 0 1.25-1.25V9"/><circle cx="6.75" cy="7" r="2.75"/></g></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #083fd7"><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>water</title><path fill="currentColor" d="M2 18v-2q.95 0 1.413-.5T5.35 15t1.938.5t1.362.5q.95 0 1.413-.5T12 15q1.425 0 1.938.5t1.412.5q.95 0 1.388-.5t1.912-.5t1.938.5T22 16v2q-1.425 0-1.937-.5T18.65 17t-1.362.5t-1.938.5q-1.425 0-1.937-.5T12 17q-.95 0-1.412.5T8.65 18t-1.912-.5T5.35 17t-1.412.5T2 18m0-4v-2q.95 0 1.413-.5T5.35 11q1.425 0 1.913.5t1.387.5q.95 0 1.412-.5T12 11q1.425 0 1.925.5t1.375.5q.95 0 1.412-.5t1.938-.5q1.425 0 1.938.5T22 12v2q-1.475 0-1.963-.5T18.65 13t-1.362.5t-1.938.5q-1.425 0-1.937-.5T12 13q-.95 0-1.388.5T8.7 14t-1.962-.5T5.35 13t-1.412.5T2 14m0-4V8q.95 0 1.413-.5T5.35 7q1.425 0 1.913.5T8.65 8q.95 0 1.412-.5T12 7q1.425 0 1.925.5T15.3 8q.95 0 1.412-.5T18.65 7q1.425 0 1.938.5T22 8v2q-1.475 0-1.963-.5T18.65 9t-1.362.5t-1.938.5q-1.425 0-1.937-.5T12 9q-.95 0-1.388.5T8.7 10t-1.962-.5T5.35 9t-1.412.5T2 10"/></svg></td>
+  </tr>
+  <tr style = "height: 80px;">
+    <td style = "width: 80px; text-align: center; background-color: #185e2a""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>jungle</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12.25 16.5c-2.4.75-6-1.1-4.1-6.3c1.55-4.2 5.4-6 8.55-5.9a8.92 8.92 0 0 1 2.75 10c-1.9 5.2-5.85 4.3-7.2 2.2m-5.1-5.05l4.15-.35M9.2 7.3L13 8m7.25 5.55l-3-2.7"/><path d="M12.25 16.5c0 3-1.75 4.75-4.5 4.75H3.5V5.5m0 0c0-1.5.75-2.5 2-2.5s2 .75 2 1.75S6.75 6 6.25 6"/></g></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #5180c6"><svg xmlns="http://www.w3.org/2000/svg"viewBox="5 10 90 60"fill="none"stroke="black"stroke-width="2.5"stroke-linecap="round"stroke-linejoin="round"><path d="M25 15 V27 M19 21 H31 M21 17 L29 25 M29 17 L21 25"/><path d="M76 17 V29 M70 23 H82 M72 19 L80 27 M80 19 L72 27"/><path d="M40 30 V40 M35 35 H45 M36 31 L44 39 M44 31 L36 39"/><path d="M65 31 V41 M60 36 H70 M61 32 L69 40 M69 32 L61 40"/><path d="M10 49 Q30 44 50 49 Q70 54 90 49"/><path d="M10 62 L25 56 L38 66 L50 56 L63 66 L76 56 L90 62"/></svg></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #96b8c5""><svg xmlns="http://www.w3.org/2000/svg" width="100px" height="80px" viewBox="15 40 72 52" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 72 Q30 68 50 72 Q72 76 88 70"/><path d="M18 80 Q50 76 82 80"/><path d="M28 70 L25 55 L19 48"/><path d="M25 55 L31 47"/><path d="M25 55 L24 43"/><path d="M70 72 L73 54 L68 46"/><path d="M73 54 L80 46"/><path d="M73 54 L74 42"/><path d="M43 70 L43 58"/><path d="M43 62 L35 55"/><path d="M43 64 L52 55"/><path d="M35 55 L31 57"/><path d="M35 55 L37 50"/><path d="M52 55 L56 57"/><path d="M52 55 L50 49"/><path d="M15 88 L25 88"/><path d="M75 88 L85 88"/><path d="M49 88 L55 88"/></svg></td>
+    <td style = "width: 80px; text-align: center; background-color: #636363""><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"><title>mountain-2-fill</title><path fill="currentColor" fill-rule="evenodd" d="M8.701 5.75c.577-1 2.02-1 2.598 0l3.5 6.062l.902-1.562c.577-1 2.02-1 2.598 0l4.33 7.5A1.5 1.5 0 0 1 21.33 20H17v-.002l-.072.002H3.072a1.5 1.5 0 0 1-1.3-2.25zm-.91 5.576l.709.472l.945-.63a1 1 0 0 1 1.11 0l.945.63l.709-.472L10 7.5z" clip-rule="evenodd"/></svg></td>
+  </tr>
+</table>
+
+<h3 id="egysegkezeles" style="text-align: justify;">4. Egységek kezelése</h3>
+
+<h3 id="gyozelmifeltetel" style="text-align: justify;">5. Győzelmi feltételek</h3>
 
 </body>
 </html>
