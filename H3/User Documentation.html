@@ -43,7 +43,46 @@
     h4 { margin-top: 1.2em; }
     ul { margin-top: 0.5em; margin-bottom: 0.5em; }
     li { margin-bottom: 0.3em; line-height: 1.4; }
-    </style>
+
+.unit {
+  width: 400px;
+  padding: 5px;
+  background: #30291f;
+  color: #f2dfb5;
+  border: 1px solid #806744;
+  border-radius: 5px;
+  font: 30px Georgia, serif;
+}
+.top {
+  display: flex;
+}
+.icon {
+  font-size: 50px;
+}
+.hp {
+  font-size: 30px;
+  color: #a7c17d;
+}
+.stats {
+  border-top: 1px solid #766044;
+  margin-top: 7px;
+  padding-top: 6px;
+  text-align: center;
+  font-size: 25px;
+}
+.health {
+  height: 15px;
+  background: #e90a0a;
+  margin-top: 7px;
+}
+.health div {
+  width: 80%;
+  height: 100%;
+  background: #4d880a;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -108,7 +147,9 @@
 
 <h3 id="varoskezeles" style="text-align: justify;">3. Városok kezelése</h3>
 
-<img src="clip studio/red base simple.png"  style="max-width: 100%; height: auto;">
+<img src="clip studio/red base farm tower.png"  style="max-width: 100%; height: auto;">
+
+<img src="clip studio/red base large.png"  style="max-width: 100%; height: auto;">
 
 <!--
 
@@ -142,6 +183,26 @@
 -->
 
 <h3 id="egysegkezeles" style="text-align: justify;">4. Egységek kezelése</h3>
+
+<div class="unit">
+  <div class="top">
+    <span class="icon">⚔️</span>
+    <div class="name">
+      <b>Barbarian</b>
+      <br>
+      <p>Red Empire</p>
+    </div>
+  </div>
+  <div class="stats">
+    ⚔ 30-40  🛡 0  ➤ 3
+  </div>
+  <span class="hp">80/100 HP</span>
+  <div class="health"><div></div></div>
+</div>
+
+<br>
+
+<img src="clip studio/archer selected.png"  style="max-width: 100%; height: auto;">
 
 <h3 id="gyozelmifeltetel" style="text-align: justify;">5. Győzelmi feltételek</h3>
 
