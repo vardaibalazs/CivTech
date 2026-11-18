@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+        <style>
+    
+    @page {
+        size: A4 portrait;
+        margin: 2.5cm;
+    }
+    html {
+        background-color: #e0e0e0;
+    }
+    body {
+        max-width: 21cm; 
+        margin: 2cm auto; 
+        padding: 2.5cm; 
+        background-color: white;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+    }
+    p { margin-bottom: 0; margin-top: 0.5em; line-height: 1.5; }
+    .left { text-align: left; }
+    .center { text-align: center; }
+    .right { text-align: right; }
+    .large { font-size: 22pt; }
+    .title { font-size: 26pt; }
+    .members { font-size: 16pt; }
+    .spacer { height: 1.5cm; }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top;
+        text-align: left;
+    }
+    th {
+        background-color: #f9f9f9;
+    }
+    
+    h3 { margin-top: 1.5em; }
+    h4 { margin-top: 1.2em; }
+    ul { margin-top: 0.5em; margin-bottom: 0.5em; }
+    li { margin-bottom: 0.3em; line-height: 1.4; }
+    </style>
+</head>
+
+<body>
+
+<p class="left large">Csoport neve: CivTech</p>
+<p class="left large">Feladat sorszáma: H3</p>
+<p class="left large">Feladat címe: Foundation</p>
+
+<div class="spacer"></div>
+
+<p class="center title"><b>Foundation - Szótár</b></p>
+
+<div class="spacer"></div>
+
+<p class="center">Gyakorlatvezető:</p>
+<p class="center large">Mileff Péter</p>
+
+<div class="spacer"></div>
+
+<p class="left members">Csoport tagok:</p>
+<br>
+
+<table>
+  <tr>
+    <td>Várdai Balázs</td>
+    <td>GEBP</td>
+    <td>vardai.balazs22@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Csobádi Bence</td>
+    <td>GEBP</td>
+    <td>csobadibence@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Braun Milán</td>
+    <td>GEBP</td>
+    <td>braun2006milan@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Kálmán Gábor József</td>
+    <td>G1BI</td>
+    <td>gaborkalman6@gmail.com</td>
+  </tr>
+</table>
+
+<br>
+<p class="right">2026.10.28</p>
+
+<h1 id="szotar" style="text-align: justify;">Szótár</h1>
+
+<p style="text-align: justify;">Ez a dokumentum a Foundation szoftverkövetelmény specifikációjában szereplő szakterületi és informatikai szakkifejezések deffinícióit tartalmazza. A szótár célja a fejlesztők és a laikusok közötti félreértések elkerülése, a specifikáció és a Use-case modellek pontos értelmezése érdekében.</p>
+
+<div class="spacer"></div>
+
+<ul>
+  <li>
+    <b>Adatbázis</b> – A játék működéséhez szükséges adatok akár egy felhasználói fiók vagy elmentett játékmenet, rendezett tárolására szolgáló szerveroldali rendszer.
+  </li>
+
+  <li>
+    <b>Adatkorrupció</b> – Az adatok, például mentések sérülése a szerveren, ami használhatatlanná teszi azokat.
+  </li>
+
+  <li>
+    <b>Aadatmodell</b> – Az adatok tulajdonságait és egymáshoz való kapcsolatait leíró logikai felépítés a relációs adatbázisban.
+  </li>
+
+  <li>
+    <b>Aktor</b> – A szoftverrel interakcióba lépő személy vagy rendszer, ami egy folyamatot indít el a rendszerben. Aktor az lehet például játékos, fejlesztő vagy a szerver is.
+  </li>
+
+  <li>
+    <b>Algoritmus</b> – Egy adott probléma megoldására szolgáló, meghatározott lépésekből álló eljárás.
+  </li>
+
+  <li>
+    <b>Állatok</b> – Élelem és speciális egységekhez szükséges nyersanyagok a pályán.
+  </li>
+
+  <li>
+    <b>Asset csomag</b> – A játék fejlesztéséhez felhasznált, előre elkészített képi vagy hang beli elemek gyűjteménye.
+  </li>
+
+  <li>
+    <b>Backend</b> – A rendszer háttérszolgáltatása, amely az adatok tárolásáért, a hitelesítésért, a játékszabályok betartatásáért felel.
+  </li>
+
+  <li>
+    <b>Böngésző kliens</b> – A szoftver megjelenítésére és futtatására szolgáló webes környezet a felhasználó eszközén.
+  </li>
+
+  <li>
+    <b>C#</b> – Objektumorientált programozási nyelv, amely a játék backend logikájának megvalósítására szolgál.
+  </li>
+
+  <li>
+    <b>Cella</b> – A játéktér legkisebb, 80x80 pixeles alapegysége, amelyből a térkép felépül.
+  </li>
+
+  <li>
+    <b>Civilization</b> – A projekt ennek a játéknak a mintájára épül, körökre osztott stratégiai játék, amiben a játékos városokat fejleszt és birodalmat épít.
+  </li>
+
+  <li>
+    <b>Civilopédia</b> – A játékba beépített help/segítségnyújtó rendszer, ahol a játékosok az épületekről, egységekről és a technológiákról  olvashatnak részletesen.
+  </li>
+
+  <li>
+    <b>Diplomácia</b> – A játékbeli interakciók és tárgyalások rendszere.
+  </li>
+
+   <li>
+    <b>Dzsungel</b> – Speciális pálya elem, amely a játéktér körülbelül 10%-át teszi ki, de nem helyezkedhet el jég vagy sivatag mellett.
+  </li>
+
+  <li>
+    <b>Entitás</b> – Az adatbázisban nyilvántartott, önálló létezéssel bíró dolog (pl. egy regisztrált felhasználó profilja vagy egy elmentett mérkőzés).
+  </li>
+
+  <li>
+    <b>Erdő</b> – Gyakori pálya elem (kb. 15%), amely fa nyersanyagot biztosít, de generáláskor nem kerülhet jég vagy sivatag mellé.
+  </li>
+
+  <li>
+    <b>Extend</b> – Az UML use-case diagramokban használt kapcsolat, amely azt jelöli, hogy egy folyamat opcionálisan kiterjedhet egy másikra (például az 'Egység mozgatása' kiválthatja az 'Ellenség megtámadását').
+  </li>
+
+  <li>
+    <b>Éden kert</b> – Speciális pálya elem, amely extra kereskedelmet biztosít a játékosnak, de rengeteg élelem árán ki is termelhető.
+  </li>
+
+  <li>
+    <b>Fa</b> – Erdőben és dzsungelben megtalálható, a városfejlesztéshez szükséges alap nyersanyag.
+  </li>
+
+  <li>
+    <b>Felhőalapú mentés</b> – A játékállapotok távoli szerveren történő mentése a helyi gépre mentés tehát lokális mentés helyett.
+  </li>
+
+  <li>
+    <b>Frontend</b> – A játékunkban az a látható felület, ahol a játékos a böngészőből kiadja a parancsokat és követi az eseményeket.
+  </li>
+
+  <li>
+    <b>Git és GitHub</b> – Rögzíti a kódmódosításokat és a fejlesztőcsapat munkáját és a hibajegyeket hangolja össze.
+  </li>
+
+  <li>
+    <b>Győzelmi feltételek</b> –Ezekkel a kritériumokkal lehet megállapítani a mérkőzés eredményét.
+  </li>
+
+  <li>
+    <b>Hash-elés</b> – Titkosítási és biztonsági eljárás, amely során a felhasználók jelszavait kódolják, és visszafejthetetlen formában tárolják az adatbázisban.
+  </li>
+
+  <li>
+    <b>Hegy</b> – Speciális pálya elem (kb. 10%), amely mellett kőbánya építhető a kő nyersanyag kitermeléséhez.
+  </li>
+
+  <li>
+    <b>Hitelesítés</b> – A regisztrációs és bejelentkezési folyamatok során végrehajtott szerveroldali ellenőrzés a megadott adatok alapján.
+  </li>
+
+  <li>
+    <b>Hotfix/Patch</b> – A szoftver esetleges hibáinak utólagos javítása, vagy bármilyen szoftverfrissítés.
+  </li>
+
+  <li>
+    <b>HTML5 Canvas</b> – Modern webes technológia, amely lehetővé teszi a 2D-s grafikák és animációk megalkotását a böngészőn belül.
+  </li>
+
+  <li>
+    <b>Include</b> – Az UML use-case diagramokban használt kapcsolat, amely azt jelöli, hogy egy folyamat kötelezően meghív és lefuttat egy másikat (például az 'Új épület felhúzása' a 'Nyersanyag-költség levonását').
+  </li>
+
+  <li>
+    <b>Interface</b> – Felhasználó és a rendszer közötti kapcsolatot adja.
+  </li>
+
+  <li>
+    <b>Játékállapot</b> – A mérkőzés aktuális állása egy adott körben.
+  </li>
+
+  <li>
+    <b>Játékegyensúly</b> – Egy olyan megfelelő arány a játék elemei között amivel elérjük hogy a mérkőzés kihívást nyújtson és tisztességes legyen.
+  </li>
+
+  <li>
+    <b>Játékmechanika</b> – A játék működését meghatározó szabályok és háttérfolyamatok.
+  </li>
+
+  <li>
+    <b>Jég</b> – A pálya legészakibb és legdélibb peremén generálódó elem (a játéktér kb. 10%-a).
+  </li>
+
+  <li>
+    <b>JSON</b> – Szabványos  ember által is olvasható adatformátum a kliens és a szerver közötti gyors hálózati adatcserére.
+  </li>
+
+  <li>
+    <b>Kliens-szerver architektúra</b> – Olyan felépítés, ahol a felhasználó gépén futó program folyamatosan egy központi szerverrel kommunikál az interneten keresztül.
+  </li>
+
+  <li>
+    <b>Kódolási konvenciók</b> – A fejlesztőcsapat által használt egységes programozási szabályzat a tiszta kód érdekében.
+  </li>
+
+  <li>
+    <b>Kő</b> – Hegyek mellett létrehozott kőbányákkal kitermelhető nyersanyag.
+  </li>
+
+  <li>
+    <b>Körökre osztott</b> – Olyan stratégiai játékmód, ahol a Játékos és a gép által irányított AI Ellenfél nem valós időben, hanem egymást váltva "lépnek", hozzák meg a döntéseket.
+  </li>
+
+  <li>
+    <b>Mesterséges inteligencia/AI Ellenfél</b> – A gép által vezérelt játékos, amely a saját logikája alapján kiszámítja és csinálja a lépéseit.
+  </li>
+
+  <li>
+    <b>Mező</b> – A leggyakoribb pálya elem, amely a térkép körülbelül 20%-át alkotja, speciális generálási korlátozások nélkül.
+  </li>
+
+  <li>
+    <b>Minimap</b> – A játéktér vizuálisan kicsinyített, leegyszerűsített verziója a képernyő sarkában, a játékban lévő tájézkodáshoz.
+  </li>
+
+  <li>
+    <b>Moduláris felépítés</b> – A kódunk önálló és könnyen cserélhető és karbantartható modulokra történő bontása.
+  </li>
+
+  <li>
+    <b>Munkamenet</b> – A játékos sikeres bejelentkezésétől a kijelentkezésig tartó kapcsolat a szerverrel.
+  </li>
+
+  <li>
+    <b>MySQL</b> – Olyan nyílt forráskódú adatbázis-kezelő rendszer ami az adatok táblázatos tárolását végzi.
+  </li>
+
+  <li>
+    <b>Nemesfém</b> – Értékes nyersanyag, amely a késői fejlesztésekhez és a kereskedelemhez elengedhetetlen.
+  </li>
+
+  <li>
+    <b>Nyersanyag</b> – A mérkőzés során begyűjthető virtuális erőforrás, amelynek költségét a rendszer levonja az építkezés, toborzás vagy technológiai kutatás során.
+  </li>
+
+  <li>
+    <b>Oázis</b> – A sivatagban ritkán előforduló speciális elem, amely élelemforrást és extra fejlesztést nyújt a játékosnak.
+  </li>
+
+  <li>
+    <b>Obelisk</b> – Extra fejlesztési sebességet biztosító elem, amely rengeteg kő nyersanyagért cserébe bontható ki.
+  </li>
+
+  <li>
+    <b>Pályagenerálás</b> – Egy új játék inditásánál ez az algoritmus létrehozza a 2D-s játékteret és véletlenszerűen elhelyezi a mezőkön a nyersanyagokat.
+  </li>
+
+  <li>
+    <b>REST API</b> – Szabványos, webalapú kommunikációs felület, amelyen keresztül a böngésző kliens lekérdezéseket küldhet a játékszervernek.
+  </li>
+
+  <li>
+    <b>Royalty-free</b> – Jogdíjmentes tartalom.
+  </li>
+
+  <li>
+    <b>Singleplayer</b> – Olyan játékmód, ahol egyetlen emberi játékos méri össze a tudását a gép ellen, többjátékos (multiplayer) opció nélkül.
+  </li>
+
+  <li>
+    <b>Sivatag</b> – A pálya mintegy 5%-át kitevő elem, amely nem helyezkedhet el jég vagy tundra mellett.
+  </li>
+
+  <li>
+    <b>Sprite</b> – A játék vizuális megjelenítéséhez használt 2D-s grafikai objektum.
+  </li>
+
+  <li>
+    <b>Szoftverkövetelmény-specifikáció (SRS)</b> – A készítendő szoftver funkcióit, interfészeit és korlátait részletező dokumentum.
+  </li>
+
+  <li>
+    <b>Szűk keresztmetszet / Bottleneck</b> – A szoftver azon része, amely lelassíthatja a rendszer teljesítményét.
+  </li>
+
+  <li>
+    <b>Technológiai fa</b> – A játékban elérhető fejlesztések és kutatások hierarchikus rendszere, ahol a Játékos új épületeket és fejlesztéseket oldhat fel nyersanyagok elköltésével.
+  </li>
+
+  <li>
+    <b>Tundra</b> – Hideg éghajlatú pálya elem (kb. 5%), amely nem rendelkezik speciális generálási szabállyal.
+  </li>
+
+  <li>
+    <b>UML</b> – A rendszer felépítésének és működésének ábrás bemutatására szolgáló jelölésrendszer.
+  </li>
+
+  <li>
+    <b>Use-case</b> – A szoftver egy funkciója vagy munkafolyamata (például 'Regisztráció', 'Új épület felhúzása' vagy 'Kör befejezése').
+  </li>
+
+  <li>
+    <b>Útvonalkeresés</b> –Egy algoritmus ami megnéézi, hogy egy harci egység milyen útvonalon juthat el a céljához az akadályok kikerülésével.
+  </li>
+
+  <li>
+    <b>Validáció</b> – A háttérrendszer ellenőrző folyamata, amellyel megvizsgálja, hogy a felhasználó által bevitt adatok megfelelnek-e a biztonsági és logikai követelményeknek.
+  </li>
+
+  <li>
+    <b>Vas</b> – A játék későbbi szakaszaiban felfedezhető nyersanyag, amely speciális katonai egységek gyártásához szükséges.
+  </li>
+
+  <li>
+    <b>Víz</b> – A pálya legnagyobb részét (kb. 25%) borító alap elem.
+  </li>
+
+  <li>
+    <b>Vízesés</b> – Extra fejlesztési sebességet adó pálya elem, amely kitermelhető egy fejlesztés azonnali megszerzéséhez.
+  </li>
+
+  <li>
+    <b>Vizuális visszajelzés</b> – A játékfelület azonnali grafikus reakciója a játékos cselekedeteire, mondjuk ha elfogy a nyersanyag egy funkcio gombja szürke lesz tehát nem használható stb...
+  </li>
+</ul>
+
+
+</body>
+</html>
